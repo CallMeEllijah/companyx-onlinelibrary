@@ -18,6 +18,7 @@ import bookList from "./components/layout/bookList";
 import createBook from "./components/books/createBook";
 import bookDetails from "./components/books/bookDetails";
 import instanceDetails from "./components/books/instanceDetails";
+import logList from "./components/layout/logList";
 
 import error404 from "./components/errorpages/error404";
 import error429 from "./components/errorpages/error429";
@@ -66,7 +67,9 @@ class App extends Component {
             <Route exact path="/createBook" component={createBook} />
             <Route exact path="/bookList" component={bookList} />
             <Route path="/bookList/book/" component={bookDetails} />
-            <Route path="/bookList/instance/" component={instanceDetails} />
+            <Route path="/bookList/instance/" component={instanceDetails} /
+            >
+            <Route path="/logList" component={logList} />
 
             <Route exact path="/errorGen" component={errorGen} />
             <Route exact path="/404" component={error404} />

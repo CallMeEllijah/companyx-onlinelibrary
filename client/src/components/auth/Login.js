@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
+import Axios from 'axios';
 
 class Login extends Component {
   constructor() {
@@ -54,6 +55,15 @@ class Login extends Component {
     };
 
     this.props.loginUser(userData);
+
+    var d = new Date();
+
+    const newLog = {
+      log: this.state.email + " logged in. at " + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+    };
+
+    Axios.post("/api/logs/createLog", newLog);
+
   };
 
   render() {

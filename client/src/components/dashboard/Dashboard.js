@@ -30,6 +30,11 @@ class Dashboard extends Component {
     this.props.history.push("/createBook");
   };
 
+  onLogClick = e => {
+    e.preventDefault();
+    this.props.history.push("/logList");
+  };
+
   render() {
     const { user } = this.props.auth;
     if(user.uType === "1"){ //if user is a student or teacher lod this
@@ -186,8 +191,20 @@ class Dashboard extends Component {
                   letterSpacing: "1.5px",
                   marginTop: "1rem"
                 }}
-                onClick={this.onLogoutClick}
+                onClick={this.onLogClick}
                 className="btn btn-large waves-effect waves-light hoverable blue accent-3">
+                View System Logs
+              </button>
+              <br></br>
+              <button
+                style={{
+                  width: "250px",
+                  borderRadius: "3px",
+                  letterSpacing: "1.5px",
+                  marginTop: "1rem"
+                }}
+                onClick={this.onLogoutClick}
+                className="btn btn-large waves-effect waves-light hoverable darkgreen accent-3">
                 Logout
               </button>
             </div>

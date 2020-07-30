@@ -80,7 +80,15 @@ class instanceDetails extends Component {
             this.setState({
                 errors: err.response.data
             });
-        })
+        });
+    
+    var d = new Date();
+
+    const newLog = {
+      log: this.state._id + " instance has been edited " + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+    };
+
+    Axios.post("/api/logs/createLog", newLog);
   };
 
   onSubmitRemoveInstance = e => {
@@ -98,7 +106,14 @@ class instanceDetails extends Component {
             this.setState({
                 errors: err.response.data
             });
-        })
+        });
+        var d = new Date();
+
+        const newLog = {
+          log: this.state._id + " instance has been deleted " + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+        };
+    
+        Axios.post("/api/logs/createLog", newLog);
     }
 
   };  
@@ -122,7 +137,15 @@ class instanceDetails extends Component {
           this.setState({
               errors: err.response.data
           });
-      })
+      });
+
+      var d = new Date();
+
+      const newLog = {
+        log: this.state._id + " has been borrowed by " + this.props.auth.user.username + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+      };
+  
+      Axios.post("/api/logs/createLog", newLog);
   };
 
   render() {

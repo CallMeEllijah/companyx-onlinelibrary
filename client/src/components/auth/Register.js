@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
+import Axios from "axios";
 
 const studteachType = "1"; //always user typ1 for student and teacher
 const managerType = "2"; //always user typ1 for manager
@@ -56,6 +57,15 @@ class Register extends Component {
     };
 
     this.props.registerUser(newUser, this.props.history);
+    
+    var d = new Date();
+
+    const newLog = {
+      log: this.state.IDno + " has made a library account. at "  + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+    };
+
+    Axios.post("/api/logs/createLog", newLog);
+
   };
 
   onSubmitAdmin = e => {
@@ -75,6 +85,15 @@ class Register extends Component {
     };
 
     this.props.registerUser(newUser, this.props.history);
+
+    var d = new Date();
+
+    const newLog = {
+      log: "admin made " + this.state.IDno + " a manager account. at "  + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+    };
+
+    Axios.post("/api/logs/createLog", newLog);
+
   };
 
   render() {
@@ -205,8 +224,8 @@ class Register extends Component {
                   <span className="red-text">{errors.password2}</span>
                 </div>
                 <div >
-                  <label>Browser Select</label>
-                  <select classname="browser-default"
+                <label>Browser Select</label>
+                  <select className="browser-default"
                       onChange={this.onChange}
                       value={this.state.secQ}
                       error={errors.secQ}

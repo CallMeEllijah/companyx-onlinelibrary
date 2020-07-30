@@ -233,6 +233,13 @@ class bookDetails extends Component {
         });
     }
     );
+    var d = new Date();
+
+    const newLog = {
+      log: this.state.oldTitle + " book has been edited by "  +  this.props.auth.user.username + " at " + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+    };
+
+    Axios.post("/api/logs/createLog", newLog);
   };
 
   onSubmitAddInstance = e => {
@@ -249,6 +256,14 @@ class bookDetails extends Component {
     .post("/api/books/addInstance", newInstance)
     .then(res => this.props.history.push("/successAddInstance"))
     .catch((err) => this.props.history.push("/errorGen"));
+
+    var d = new Date();
+
+    const newLog = {
+      log: this.state.oldTitle + " instance has been added to the library by "  +  this.props.auth.user.username + " at " + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+    };
+
+    Axios.post("/api/logs/createLog", newLog);
   };
 
   onSubmitDeleteBook = e => {
@@ -263,6 +278,14 @@ class bookDetails extends Component {
       .post("/api/books/deleteBook", newInstance)
       .then(res => this.props.history.push("/successBookDelete"))
       .catch((err) => this.props.history.push("/errorGen"));
+
+      var d = new Date();
+
+      const newLog = {
+        log: this.state.oldTitle + " book has been deleted by " +  this.props.auth.user.username + " at " + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+      };
+  
+      Axios.post("/api/logs/createLog", newLog);
     } else {
       console.log("bawal delete");
       this.props.history.push("/errorBookDelete");
@@ -287,6 +310,14 @@ class bookDetails extends Component {
       })
       console.log(err.response.data);
   });
+
+    var d = new Date();
+
+    const newLog = {
+      log: this.state.oldTitle + " has received a review from " + this.props.auth.user.username + " " + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+    };
+
+    Axios.post("/api/logs/createLog", newLog);
   };
 
   render() {

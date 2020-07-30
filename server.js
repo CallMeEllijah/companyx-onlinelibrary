@@ -6,6 +6,7 @@ const passport = require("passport");
 //every add of model + route, lagay dito tapos lagay dun sa baba routes
 const users = require("./routes/api/users");
 const books = require("./routes/api/books");
+const logs = require("./routes/api/logs");
 
 const app = express();
 
@@ -38,6 +39,7 @@ require("./config/passport")(passport);
 // Routes
 app.use("/api/users", users);
 app.use("/api/books", books);
+app.use("/api/logs", logs);
 
 const port = process.env.PORT || 5000;
 
