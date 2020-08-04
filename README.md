@@ -18,7 +18,7 @@ Xu, Aaron John
 2. In the client (sub directory: client)  run ```npm  install```to install all of the dependencies.
 
 
-3.In the base app (main directory: companyx-onlinelibrary) open 2 command prompts and run:
+3.In the base app (main directory: companyx-onlinelibrary) open 2 command prompts and run:\
 3.1. ```npm run client``` to run the front end 
 3.2. ```npm run server``` to run the back end 
 
