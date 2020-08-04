@@ -19,8 +19,8 @@ Xu, Aaron John
 
 
 3.In the base app (main directory: companyx-onlinelibrary) open 2 command prompts and run:
-  3.1. ```npm run client``` to run the front end 
-  3.2. ```npm run server``` to run the back end 
+3.1. ```npm run client``` to run the front end 
+3.2. ```npm run server``` to run the back end 
 
 4. Open a browser and type **http://localhost:5000** to launch the **Server** 
 5. Open a new tab and type **http://localhost:3000** to launch the **Front End/ Client**
