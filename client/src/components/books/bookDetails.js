@@ -61,8 +61,7 @@ class bookDetails extends Component {
             });
             if(err.response.data.bookListData === "book doesnt exist") this.props.history.push("/404");
         });
-        console.log("tite");
-        console.log(tite);
+        
 
         Axios.post("/api/books/getInstance", tite)
         .then(res => {
@@ -71,8 +70,10 @@ class bookDetails extends Component {
           });
 
           for(var i = 0; i < this.state.row.length; i++){
-            var temp = this.state.row[i]._id;
-            var temp2 = this.state.row[i].status;
+            console.log(this.state.row[i]);
+            var temp = i+1;
+            if(this.state.row[i].status == "borrowed") var temp2 = <p style={{color:"red"}}>{this.state.row[i].status}</p>;
+            if(this.state.row[i].status == "available") var temp2 = <p style={{color:"green"}}>{this.state.row[i].status}</p>;
             if(temp.length > 25){
               temp = temp.substring(0, 45);
               temp = temp + '...';
@@ -93,7 +94,7 @@ class bookDetails extends Component {
             data: {
               columns: [
                 {
-                  label: 'UID',
+                  label: 'Instance',
                   field: 'UID',
                   width: '50px',
                   attributes: {
@@ -499,7 +500,7 @@ class bookDetails extends Component {
                     info={false}
                     data={this.state.data}
                     paging={false}
-                    searchTop
+                    serach={false}
                     searchBottom={false}
                     style={{width: "600px"}}/>
                   </div>
@@ -580,7 +581,7 @@ class bookDetails extends Component {
                   info={false}
                   data={this.state.data}
                   paging={false}
-                  searchTop
+                  serach={false}
                   searchBottom={false}
                   style={{width: "600px"}}/>
                 </div>

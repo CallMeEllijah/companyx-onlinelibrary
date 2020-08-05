@@ -26,9 +26,24 @@ router.post("/register", (req, res) => {
     return res.status(400).json(errors);
   }
 
-  User.findOne({ email: req.body.email }).then(user => {
+  User.findOne({$or:[{email: req.body.email},{username:req.body.username},{IDno: req.body.IDno}]}).then(user => {
     if (user) {
-      return res.status(400).json({ email: "Email already exists" });
+      if(req.body.email == user.email && req.body.username == user.username && req.body.IDno == user.IDno)
+        return res.status(400).json({username: "username exists", email: "email exists", IDno: "ID num exists"});
+      else if(req.body.email == user.email && req.body.username == user.username)
+        return res.status(400).json({username: "username exists", email: "email exists"});
+      else if(req.body.IDno == user.IDno && req.body.username == user.username)
+        return res.status(400).json({IDno: "idno exists", email: "email exists"});
+      else if(req.body.email == user.email && req.body.IDno == user.IDno)
+        return res.status(400).json({username: "username exists", IDno: "idno exists"});
+      else if (req.body.email == user.email)
+        return res.status(400).json({email: "email exists"});
+      else if (req.body.username == user.username)
+        return res.status(400).json({username: "username exists"});
+      else if (req.body.IDno == user.IDno)
+        return res.status(400).json({username: "IDno exists"});
+      else
+        return res.status(400).json({error: "wtf"});
     } else {
       const newUser = new User({
         fName: req.body.fName,
