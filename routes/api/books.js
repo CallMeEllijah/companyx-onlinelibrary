@@ -50,7 +50,7 @@ router.get("/getBooks", (req, res) => {
       if (!books.length) {
         return res.status(400).json({bookListData: "books no exist"});
       } else {
-        return res.json(books);
+        return res.status(200).json(books);
       }
     })
 });
@@ -110,9 +110,9 @@ router.post("/getInstance", (req, res) => {
 
   Instance.find({ title: req.body.oldTitle}).then(instance => {
     if (!instance.length) {
-      return res.status(400).json({bookListData: "instances no exist"});
+      return res.status(400).json({instances: "instances no exist"});
     } else {
-      return res.json(instance);
+      return res.status(200).json(instance);
     }
   })
 });
