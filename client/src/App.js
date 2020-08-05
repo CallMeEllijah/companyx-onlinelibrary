@@ -92,6 +92,7 @@ class App extends Component {
             </Switch>
 
             <Route exact path="/" component={Landing} />
+            <Route exact path="/landing" component={Landing} />
           </div>
         </Router>
       </Provider>
