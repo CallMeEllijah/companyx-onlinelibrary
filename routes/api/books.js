@@ -177,6 +177,7 @@ router.post("/borrowInstance", (req, res) => {
 
   Instance.findOne({ _id: req.body._id }).then(instanceDetail => {
     if (instanceDetail) {
+      if(instanceDetail.status == "borrowed") return res.status(400).json({stat: "instance currently borowed"})
       instanceDetail
       .updateOne({
           name: req.body.username,
@@ -284,7 +285,7 @@ router.post("/getBooksProfile", (req, res) => {
   console.log("getborrowed");
   Instance.find({ name: req.body.username}).then(borrowed => {
     if (!borrowed.length) {
-      return res.status(400).json({bookListData: "User has no borrowed books as of the moment"});
+      return res.status(400).json({bookListData: "books borrowed no exist"});
     } else {
       return res.json(borrowed);
     }

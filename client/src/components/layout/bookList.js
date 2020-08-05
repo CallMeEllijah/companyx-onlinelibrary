@@ -44,8 +44,8 @@ class bookList extends Component {
           this.state.titles.push({
             title: temp,
             link: <div>
-            <Link to={'/bookList/book/' + this.state.row[i].title} className="btn-flat waves-effect">
-              Click to see Details
+            <Link to={'/bookList/book/' + this.state.row[i].title} className="btn-flat waves-effect" style={{textDecoration: "underline", color:"blue"}}>
+              Click Here
             </Link>
           </div>
           });
@@ -66,7 +66,7 @@ class bookList extends Component {
                 },
               },
               {
-                label: 'Link',
+                label: 'Details',
                 field: 'link',
                 width: '50px',
               }
