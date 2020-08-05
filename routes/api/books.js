@@ -284,7 +284,7 @@ router.post("/getBooksProfile", (req, res) => {
   console.log("getborrowed");
   Instance.find({ name: req.body.username}).then(borrowed => {
     if (!borrowed.length) {
-      return res.status(400).json({bookListData: "books borrowed no exist"});
+      return res.status(400).json({bookListData: "User has no borrowed books as of the moment"});
     } else {
       return res.json(borrowed);
     }

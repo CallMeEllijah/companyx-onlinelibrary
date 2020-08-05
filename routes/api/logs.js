@@ -8,7 +8,11 @@ router.post("/createLog", (req, res) => {
       log: req.body.log
   });
 
-  newLog.save().then(log => res.json(log)).catch(err => console.log(err));
+  newLog.save().then(log => {
+    res.json(log)
+  }).catch(err => {
+    res.status(400).send("failed to save new todo");
+  });
 
 });
 

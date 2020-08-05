@@ -58,13 +58,15 @@ class Register extends Component {
 
     this.props.registerUser(newUser, this.props.history);
     
-    var d = new Date();
+    //edit the log to only run when they receive a success from register user
 
-    const newLog = {
-      log: this.state.IDno + " has made a library account. at "  + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
-    };
+    //var d = new Date();
 
-    Axios.post("/api/logs/createLog", newLog);
+    //const newLog = {
+    //  log: this.state.IDno + " has made a library account. at "  + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+    //};
+
+    //Axios.post("/api/logs/createLog", newLog);
 
   };
 
