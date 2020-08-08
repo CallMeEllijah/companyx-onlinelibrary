@@ -172,7 +172,7 @@ router.post("/login", (req, res) => {
 
 router.post("/deleteUser", (req, res) => {
   User.deleteOne({ email: req.body.email })
-    .then(res => {return res.status(200).json({success: "worked"})})
+    .then(user => {return res.status(200).json({success: "worked"})})
     .catch(err => {return res.status(400).json({error: err})});
 });
 
