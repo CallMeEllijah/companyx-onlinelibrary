@@ -252,12 +252,18 @@ router.post("/addInstance", (req, res) => {
       .catch(err => {return res.status(400).json(err)});
 });
 
-//delete a book instance
+//delete a book instance                                                  EDIT THIS
 router.post("/deleteOneInstance", (req, res) => {
   console.log(req.body._id);
-  Instance.deleteOne({_id: req.body._id}, function(err){
-    res.send({status: "deleted na even if walang instance"})
-  });
+
+  const addinstancequery = {"title": req.body.title};
+  const addinstanceupdate = {$inc: { instances: -1} };
+
+  Instance.deleteOne({_id: req.body._id});
+
+  Book.updateOne(addinstancequery, addinstanceupdate)
+    .then(rec => {return res.status(200).json(rec)})
+    .catch(err => {return res.status(400).json(err)});
 });
 
 //create review
@@ -287,7 +293,7 @@ router.post("/getReviews", (req, res) => {
   console.log("getreviews");
   Review.find({ title: req.body.oldTitle}).then(reviews => {
     if (!reviews.length) {
-      return res.status(400).json({bookListData: "instances no exist"});
+      return res.status(400).json({bookListData: "reviews dont exist"});
     } else {
       return res.json(reviews);
     }
@@ -298,7 +304,7 @@ router.post("/getReviewsProfile", (req, res) => {
   console.log("getreviews");
   Review.find({ username: req.body.username}).then(reviews => {
     if (!reviews.length) {
-      return res.status(400).json({bookListData: "instances no exist"});
+      return res.status(400).json({bookListData: "reviews dont exist"});
     } else {
       return res.json(reviews);
     }

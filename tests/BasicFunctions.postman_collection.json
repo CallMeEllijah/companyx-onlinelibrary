@@ -7,7 +7,56 @@
 	},
 	"item": [
 		{
-			"name": "register user",
+			"name": "get books",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ad9e5495-d8ee-4567-b21a-b3f39017bef9",
+						"exec": [
+							"pm.test(\"get books\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"email\",\r\n    \"password\": \"pass\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://shrouded-tor-61207.herokuapp.com/api/books/getBooks",
+					"protocol": "https",
+					"host": [
+						"shrouded-tor-61207",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"books",
+						"getBooks"
+					]
+				},
+				"description": "get the list of books"
+			},
+			"response": []
+		},
+		{
+			"name": "register user manager",
 			"event": [
 				{
 					"listen": "test",
@@ -139,6 +188,461 @@
 						"deleteUser"
 					]
 				}
+			},
+			"response": []
+		},
+		{
+			"name": "register user normal",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a87a56fc-4387-4392-8401-5d3d2982f6c0",
+						"exec": [
+							"pm.test(\"create logs\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fName\": \"Automatic\",\r\n    \"lName\": \"UserCreationTest\",\r\n    \"username\": \"autoUser\",\r\n    \"IDno\": \"450\",\r\n    \"email\": \"ciTEST@test.com\",\r\n    \"password\": \"123456\",\r\n    \"password2\": \"123456\",\r\n    \"secQ\": \"1\",\r\n    \"secA\": \"1234\",\r\n    \"uType\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://shrouded-tor-61207.herokuapp.com/api/users/register",
+					"protocol": "https",
+					"host": [
+						"shrouded-tor-61207",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				},
+				"description": "register normal user for testing of fucntions\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "create one book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "15e4d0bc-7593-4ca2-a780-07219e958c58",
+						"exec": [
+							"pm.test(\"create logs\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"ciTestCreateBook\",\r\n    \"authors\": \"ciTestAuthor\",\r\n    \"year\": \"2020\",\r\n    \"isbn\": \"1234567890\",\r\n    \"callno\": \"000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://shrouded-tor-61207.herokuapp.com/api/books/createBook",
+					"protocol": "https",
+					"host": [
+						"shrouded-tor-61207",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"books",
+						"createBook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit one book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2ca41cef-7516-4db6-815e-5c24a265f30a",
+						"exec": [
+							"pm.test(\"create logs\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"oldTitle\": \"ciTestCreateBook\",\r\n    \"title\": \"ciTestCreateBook\",\r\n    \"authors\": \"ciTestAuthorEdit\",\r\n    \"year\": \"2020\",\r\n    \"isbn\": \"1234567890\",\r\n    \"callno\": \"000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://shrouded-tor-61207.herokuapp.com/api/books/bookEdit",
+					"protocol": "https",
+					"host": [
+						"shrouded-tor-61207",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"books",
+						"bookEdit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create reviews",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fd5a6177-71fc-4006-bd2e-94235d857ced",
+						"exec": [
+							"pm.test(\"get reviews\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"autoUser\",\r\n    \"title\": \"ciTestCreateBook\",\r\n    \"review\": \"ciReviewTestInput\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://shrouded-tor-61207.herokuapp.com/api/books/createReview",
+					"protocol": "https",
+					"host": [
+						"shrouded-tor-61207",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"books",
+						"createReview"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get reviews",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2367760c-37c6-4533-8d1c-13c32fe46cec",
+						"exec": [
+							"pm.test(\"get reviews\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"oldTitle\" : \"ciTestCreateBook\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://shrouded-tor-61207.herokuapp.com/api/books/getReviews",
+					"protocol": "https",
+					"host": [
+						"shrouded-tor-61207",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"books",
+						"getReviews"
+					]
+				},
+				"description": "getting reviews of one book"
+			},
+			"response": []
+		},
+		{
+			"name": "get review specific user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "521e440e-139e-4f5c-a8c7-e7ac40a6b445",
+						"exec": [
+							"pm.test(\"get reviews\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"autoUser\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://shrouded-tor-61207.herokuapp.com/api/books/getReviewsProfile",
+					"protocol": "https",
+					"host": [
+						"shrouded-tor-61207",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"books",
+						"getReviewsProfile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete one book",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "82b14565-d481-4205-99ce-5bbf497958ef",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "1906a2bd-b437-4855-b514-5f4ae0cfd67e",
+						"exec": [
+							"pm.test(\"create logs\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"ciTestCreateBook\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://shrouded-tor-61207.herokuapp.com/api/books/deleteBook",
+					"protocol": "https",
+					"host": [
+						"shrouded-tor-61207",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"books",
+						"deleteBook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6db33fed-6b2b-4ab8-b754-32461c82fe9d",
+						"exec": [
+							"pm.test(\"create logs\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"ciTEST@test.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://shrouded-tor-61207.herokuapp.com/api/users/deleteUser",
+					"protocol": "https",
+					"host": [
+						"shrouded-tor-61207",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"users",
+						"deleteUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create log",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "496a5dc7-2cf4-42ec-a8af-50224d025a38",
+						"exec": [
+							"pm.test(\"create logs\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"log\" : \"ciTestReviewCreationInput\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://shrouded-tor-61207.herokuapp.com/api/logs/createLog",
+					"protocol": "https",
+					"host": [
+						"shrouded-tor-61207",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"logs",
+						"createLog"
+					]
+				},
+				"description": "creating of sample log"
+			},
+			"response": []
+		},
+		{
+			"name": "get logs",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0cc6bd32-8646-434c-994b-86a5b3003e03",
+						"exec": [
+							"pm.test(\"get system logs\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://shrouded-tor-61207.herokuapp.com/api/logs/getLogs",
+					"protocol": "https",
+					"host": [
+						"shrouded-tor-61207",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"logs",
+						"getLogs"
+					]
+				},
+				"description": "getting of system logs"
 			},
 			"response": []
 		}
