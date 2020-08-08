@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "90d0a2d7-b698-4dcc-a7fb-43e894569909",
-		"name": "AdminFunctions",
+		"name": "BasicFunctions",
 		"description": "whatever admin can do will be seen here",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -52,14 +52,14 @@
 			"response": []
 		},
 		{
-			"name": "delete user",
+			"name": "login and get profile data",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "e0eea685-b679-4987-86f6-f93723264b9f",
+						"id": "915d10f2-4064-4ab8-9b5d-8dec9b8293b5",
 						"exec": [
-							"pm.test(\"create logs\", function () {\r",
+							"pm.test(\"get profile details\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});"
 						],
@@ -72,7 +72,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"ciTEST@test.com\"\r\n}",
+					"raw": "{\r\n    \"email\" : \"ciTEST@test.com\",\r\n    \"password\" : \"123456\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -80,7 +80,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://shrouded-tor-12345.herokuapp.com/api/users/deleteUser",
+					"raw": "https://shrouded-tor-61207.herokuapp.com/api/users/login",
 					"protocol": "https",
 					"host": [
 						"shrouded-tor-61207",
@@ -90,10 +90,10 @@
 					"path": [
 						"api",
 						"users",
-						"deleteUser"
+						"login"
 					]
 				},
-				"description": "delete manager user"
+				"description": "testing login and receiving of data"
 			},
 			"response": []
 		}
