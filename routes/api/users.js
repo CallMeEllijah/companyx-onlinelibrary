@@ -171,7 +171,7 @@ router.post("/login", (req, res) => {
 });
 
 router.post("/deleteUser", (req, res) => {
-  User.deleteOne({ email: req.body.email }).then(succ => {return res.status(200)}).catch(err => {return res.status(400)});
+  User.deleteOne({ email: req.body.email }).then(res => {return res.status(200)}).catch(err => {return res.status(400)});
 });
 
 module.exports = router;
