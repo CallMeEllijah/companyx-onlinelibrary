@@ -41,6 +41,11 @@ app.use("/api/users", users);
 app.use("/api/books", books);
 app.use("/api/logs", logs);
 
+app.use(express.static(path.join(__dirname, '../build')))
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build'))
+})
+
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));
