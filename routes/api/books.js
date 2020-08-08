@@ -59,9 +59,20 @@ router.get("/getBooks", (req, res) => {
 //delete a book
 router.post("/deleteBook", (req, res) => {
   console.log(req.body.title);
-  Book.deleteOne({title: req.body.title})
-  .then(user => {return res.status(200).json({success: "worked"})})
-  .catch(err => {return res.status(400).json({error: err})});
+
+  Book.findOne({ title: req.body.title }).then(bookDetail => {
+    if (!bookDetail) {
+      return res.status(400).json({bookListData: "book doesnt exist"});
+    } else {
+      if(bookDetail.instance > 0){
+        return res.status(400).json({bookListData: "book has instances"});
+      } else {
+        Book.deleteOne({title: req.body.title})
+        .then(book => {return res.status(200).json({success: "worked"})})
+        .catch(err => {return res.status(400).json({error: err})});
+      }
+    }
+  })
 });
 
 //get the specific details of one book
