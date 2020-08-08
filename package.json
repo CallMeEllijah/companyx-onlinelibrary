@@ -7,8 +7,8 @@
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
-    "test":"jest"
-
+    "test":"jest",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build"
   },
   "author": "",
   "license": "MIT",
@@ -28,6 +28,9 @@
   },
   "devDependencies": {
     "jest": "^26.2.2"
+  },
+  "engines": {
+    "node": "12.18.1"
   }
 
  

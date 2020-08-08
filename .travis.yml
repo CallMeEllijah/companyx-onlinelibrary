@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+- "12.18.1"
+
+services:
+- "mongodb"
+
+install:
+- npm install newman
+
+before_script:
+- node --version
+- npm --version
+- node_modules/.bin/newman --version
+
+script:
+- node_modules/.bin/newman run tests/Books.postman_collection.json

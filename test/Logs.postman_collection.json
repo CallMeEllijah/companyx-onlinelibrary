@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "621c4ef6-11eb-4b73-b65f-98799534c8e5",
+		"name": "Logs",
+		"description": "all log testing will be shown here",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000/api/logs/getLogs",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "01d42e0c-ce38-4970-be74-a0b0b6fd1679",
+						"exec": [
+							"pm.test(\"get system logs\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://fierce-shore-19709.herokuapp.com/api/logs/getLogs",
+					"protocol": "https",
+					"host": [
+						"fierce-shore-19709",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"logs",
+						"getLogs"
+					]
+				},
+				"description": "getting of system logs"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/books/createLog",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8ff87c65-c2d4-47ed-aeed-c3f5e8df8f3c",
+						"exec": [
+							"pm.test(\"create logs\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"log\" : \"sample test has made sample test log\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://fierce-shore-19709.herokuapp.com/api/logs/createLog",
+					"protocol": "https",
+					"host": [
+						"fierce-shore-19709",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"logs",
+						"createLog"
+					]
+				},
+				"description": "creating of sample log"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
