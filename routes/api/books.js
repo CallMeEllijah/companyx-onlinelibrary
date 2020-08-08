@@ -60,8 +60,7 @@ router.get("/getBooks", (req, res) => {
 router.post("/deleteBook", (req, res) => {
   console.log(req.body.title);
   Book.deleteOne({title: req.body.title}, function(err){
-    res.send({status: "deleted na even if walang book"})
-  });
+  }).then(succ => {return res.status(200)}).catch(err => {return res.status(400)});
 });
 
 //get the specific details of one book
