@@ -8,6 +8,20 @@
 	"item": [
 		{
 			"name": "register user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0634ac9a-79f2-4c2b-9fa1-9021e5f3e600",
+						"exec": [
+							"pm.test(\"create logs\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -21,7 +35,7 @@
 					}
 				},
 				"url": {
-					"raw": "com/api/users/register",
+					"raw": "https://shrouded-tor-61207.herokuapp.com/api/users/register",
 					"protocol": "https",
 					"host": [
 						"shrouded-tor-61207",
@@ -39,6 +53,20 @@
 		},
 		{
 			"name": "delete user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e0eea685-b679-4987-86f6-f93723264b9f",
+						"exec": [
+							"pm.test(\"create logs\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [],
