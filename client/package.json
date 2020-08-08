@@ -20,7 +20,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:5000",
+  "proxy": "https://fierce-shore-19709.herokuapp.com",
   "eslintConfig": {
     "extends": "react-app"
   },
