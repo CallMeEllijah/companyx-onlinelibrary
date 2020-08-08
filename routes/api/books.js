@@ -232,16 +232,13 @@ router.post("/addInstance", (req, res) => {
     var instance = new Instance({
         title: req.body.title, name: req.body.name, status: req.body.status, dateA: req.body.dateA})
 
-    instance.save(function(err, res) {
-        if (err) res.status(400).json({test: "ok"});
-        console.log("Document inserted succussfully!");
-    });
+    instance.save()
+      .then(rec => console.log(rec))
+      .catch(err => {return res.status(400).json(err)});
 
     Book.updateOne(addinstancequery, addinstanceupdate)
-      .then(res => console.log(res))
+      .then(rec => {return res.status(200).json(rec)})
       .catch(err => {return res.status(400).json(err)});
-    
-    return res.status(200).json({test: "ok"});
 });
 
 //delete a book instance
