@@ -80,7 +80,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://shrouded-tor-61207.herokuapp.com/api/users/deleteUser",
+					"raw": "https://shrouded-tor-12345.herokuapp.com/api/users/deleteUser",
 					"protocol": "https",
 					"host": [
 						"shrouded-tor-61207",
