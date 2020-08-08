@@ -21,7 +21,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://shrouded-tor-61207.herokuapp.com/api/users/register",
+					"raw": "com/api/users/register",
 					"protocol": "https",
 					"host": [
 						"shrouded-tor-61207",
