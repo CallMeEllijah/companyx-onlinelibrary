@@ -9,6 +9,7 @@ const validateInstanceEditInput = require("../../validation/instanceedit");
 const Book = require("../../models/Book");
 const Instance = require("../../models/Instance");
 const Review = require("../../models/Review");
+const BorrowedHistory = require("../../models/BorrowedHistory")
 
 // @route POST api/books/createBook
 // @desc create book
@@ -46,7 +47,7 @@ router.post("/createBook", (req, res) => {
 //get the lsit of books
 router.get("/getBooks", (req, res) => {
     console.log("booklist");
-    Book.find({ }, 'title').then(books => {
+    Book.find({ }).then(books => {
       if (!books.length) {
         return res.status(400).json({bookListData: "books no exist"});
       } else {
@@ -175,6 +176,9 @@ router.post("/borrowInstance", (req, res) => {
 
   console.log("borrow instance");
 
+  var d =  new Date();
+  var today = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
+
   Instance.findOne({ _id: req.body._id }).then(instanceDetail => {
     if (instanceDetail) {
       if(instanceDetail.status == "borrowed") return res.status(400).json({stat: "instance currently borowed"})
@@ -186,6 +190,10 @@ router.post("/borrowInstance", (req, res) => {
       })
       .then(instanceDetail => res.json(instanceDetail))
       .catch(err => console.log(err));
+      
+      var history = new BorrowedHistory({title: instanceDetail.title, name: req.body.username, date: today })
+      history.save();
+
     } else {
       return res
       .status(400)
@@ -193,6 +201,7 @@ router.post("/borrowInstance", (req, res) => {
     }
   });
 
+    return res.status(200).json({test: "worked"});
 })
 
 //this is just when u update the name of the book this renames all the instances (doing this we wont have
@@ -217,13 +226,20 @@ router.post("/bookEditInstanceUpdate", (req, res) => {
 //add instance of book
 router.post("/addInstance", (req, res) => {
 
+    const addinstancequery = {"title": req.body.title};
+    const addinstanceupdate = {$inc: { instances: 1} };
+
     var instance = new Instance({
         title: req.body.title, name: req.body.name, status: req.body.status, dateA: req.body.dateA})
 
     instance.save(function(err, res) {
-        if (err) return console.error(err);
+        if (err) res.status(400).json({test: "ok"});
         console.log("Document inserted succussfully!");
     });
+
+    Book.updateOne(addinstancequery, addinstanceupdate)
+      .then(res => console.log(res))
+      .catch(err => {return res.status(400).json(err)});
     
     return res.status(200).json({test: "ok"});
 });
@@ -284,6 +300,17 @@ router.post("/getReviewsProfile", (req, res) => {
 router.post("/getBooksProfile", (req, res) => {
   console.log("getborrowed");
   Instance.find({ name: req.body.username}).then(borrowed => {
+    if (!borrowed.length) {
+      return res.status(400).json({bookListData: "books borrowed no exist"});
+    } else {
+      return res.json(borrowed);
+    }
+  })
+});
+
+router.post("/getBooksHistory", (req, res) => {
+  console.log("getborrowedhistory");
+  BorrowedHistory.find({ name: req.body.username}).then(borrowed => {
     if (!borrowed.length) {
       return res.status(400).json({bookListData: "books borrowed no exist"});
     } else {
