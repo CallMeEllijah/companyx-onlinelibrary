@@ -36,18 +36,25 @@ class bookList extends Component {
         for(var i = 0; i < this.state.row.length; i++){
 
           var temp = this.state.row[i].title;
+          var temp1 = this.state.row[i].instances;
           if(temp.length > 20){
             temp = temp.substring(0, 45);
             temp = temp + '...';
           }
 
+          if(temp1 == undefined){
+            temp1 = 0;
+          }
+
           this.state.titles.push({
             title: temp,
-            link: <div>
-            <Link to={'/bookList/book/' + this.state.row[i].title} className="btn-flat waves-effect">
-              Click to see Details
-            </Link>
-          </div>
+            link: 
+            <div>
+              <Link to={'/bookList/book/' + this.state.row[i].title} className="btn-flat waves-effect" style={{textDecoration: "underline", color:"blue"}}>
+                Click Here
+              </Link>
+            </div>,
+            bkAmt: temp1
           });
         }
 
@@ -66,8 +73,13 @@ class bookList extends Component {
                 },
               },
               {
-                label: 'Link',
+                label: 'Details',
                 field: 'link',
+                width: '50px',
+              },
+              {
+                label: 'Book Amount',
+                field: 'bkAmt',
                 width: '50px',
               }
             ],

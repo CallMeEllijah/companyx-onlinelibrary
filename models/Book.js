@@ -22,6 +22,9 @@ const BookSchema = new Schema({
   callno: {
     type: String,
     required: true
+  },
+  instances: {
+    type: Number
   }
 });
 

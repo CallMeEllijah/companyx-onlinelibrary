@@ -1,0 +1,238 @@
+{
+	"info": {
+		"_postman_id": "35401f2c-b2bc-459a-b9d9-87379fd13345",
+		"name": "Get Data for Books",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000/api/books/getBooks",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1b4ef6a7-dc3c-49e7-86c5-0ccf7557b58c",
+						"exec": [
+							"pm.test(\"get books\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"email\",\r\n    \"password\": \"pass\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/books/getBooks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"books",
+						"getBooks"
+					]
+				},
+				"description": "Get books"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/books/getInstance",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f0d752f0-043e-4ba9-a6e4-8fa6c084810b",
+						"exec": [
+							"pm.test(\"get instance\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"oldTitle\" : \"Normal Book\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/books/getInstance",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"books",
+						"getInstance"
+					]
+				},
+				"description": "get instance of a test book"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/books/getOneInstance",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "63cc2620-cee2-447d-a180-240a4d402557",
+						"exec": [
+							"pm.test(\"get one instance\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\" : \"5f1ac8f40aacbe591885b6d5\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/books/getOneInstance",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"books",
+						"getOneInstance"
+					]
+				},
+				"description": "get instance details of one"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/books/getReviews",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3a82722b-4410-4f32-be98-40766c682d9f",
+						"exec": [
+							"pm.test(\"get reviews\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"oldTitle\" : \"Normal Book\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/books/getReviews",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"books",
+						"getReviews"
+					]
+				},
+				"description": "getting reviews of one book"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/books/bookDetails",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "856ac376-39d8-4c34-b1c0-9f45b5f483b5",
+						"exec": [
+							"pm.test(\"get book details\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Normal Book\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/books/bookDetails",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"books",
+						"bookDetails"
+					]
+				},
+				"description": "get details of one book"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

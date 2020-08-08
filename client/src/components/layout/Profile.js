@@ -103,17 +103,17 @@ class Profile extends Component {
     console.log(res);
   })
   Axios
-  .post("/api/books/getBooksProfile", tite).then(res => {
+  .post("/api/books/getBooksHistory", tite).then(res => {
     this.setState({
       row4: res.data
     });
     for(var j = 0; j < this.state.row4.length; j++){
-      var _id = this.state.row4[j]._id;
+      var date = this.state.row4[j].date;
       var tit = this.state.row4[j].title;
 
       this.state.instances4.push({
-        _id: _id,
-        title: tit
+        title: tit,
+        date: date
       });
     }
     console.log(this.state.instances4);
@@ -121,8 +121,8 @@ class Profile extends Component {
       data4: {
         columns: [
           {
-            label: 'UID',
-            field: '_id',
+            label: 'Title',
+            field: 'title',
             width: '50px',
             attributes: {
               'aria-controls': 'DataTable',
@@ -130,8 +130,8 @@ class Profile extends Component {
             },
           },
           {
-            label: 'Title',
-            field: 'title',
+            label: 'Date',
+            field: 'date',
             width: '50px',
           }
         ],
@@ -151,7 +151,7 @@ class Profile extends Component {
           }
         ],
         rows: [{
-          Status: "no reviews available as of " + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+          Status: "no history available as of " + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
         }]
       }
     });

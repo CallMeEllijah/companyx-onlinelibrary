@@ -33,6 +33,8 @@ class bookDetails extends Component {
           row2: [],
           instances2:[],
 
+          _id: "",
+
           errors: {}
         };
       }
@@ -72,24 +74,75 @@ class bookDetails extends Component {
           for(var i = 0; i < this.state.row.length; i++){
             console.log(this.state.row[i]);
             var temp = i+1;
-            if(this.state.row[i].status == "borrowed") var temp2 = <p style={{color:"red"}}>{this.state.row[i].status}</p>;
-            if(this.state.row[i].status == "available") var temp2 = <p style={{color:"green"}}>{this.state.row[i].status}</p>;
+            if(this.state.row[i].status == "borrowed"){ 
+              var temp2 = <p style={{color:"red"}}>{this.state.row[i].status}</p>
+              var temp3 = 
+              <form onSubmit={this.onSubmitBorrowInstance}>
+              <div style={{ paddingLeft: "11.250px" }}>
+                <button
+                  style={{
+                    width: "100%",
+                    borderRadius: "3px",
+                    letterSpacing: "1.5px",
+                  }} 
+                  onClick={this.onclickvalue}
+                  type="submit"
+                  value={this.state.row[i]._id}
+                  className="btn btn-medium waves-effect waves-light hoverable grey accent-3 disabled">
+                    Borrow
+                  </button>
+                </div>
+              </form>
+            }
+            if(this.state.row[i].status == "available"){
+              var temp2 = <p style={{color:"green"}}>{this.state.row[i].status}</p>
+              var temp3 = 
+                <form onSubmit={this.onSubmitBorrowInstance}>
+                  <div style={{ paddingLeft: "11.250px" }}>
+                    <button
+                      style={{
+                        width: "100%",
+                        borderRadius: "3px",
+                        letterSpacing: "1.5px",
+                      }} 
+                      onClick={this.onclickvalue}
+                      type="submit"
+                      value={this.state.row[i]._id}
+                      className="btn btn-medium waves-effect waves-light hoverable blue accent-3">
+                        Borrow
+                      </button>
+                    </div>
+                </form>
+          }
             if(temp.length > 25){
               temp = temp.substring(0, 45);
               temp = temp + '...';
             }
-
-            this.state.instances.push({
-              UID: temp,
-              status: temp2,
-              link: <div>
-              <Link to={'/bookList/instance/' + this.state.row[i]._id} className="btn-flat waves-effect">
-                Click to see Details
-              </Link>
-            </div>
-            });
+            if(this.props.auth.user.uType == 1){
+              this.state.instances.push({
+                UID: temp,
+                status: temp2,
+                link: temp3
+              });
+            } else if(this.props.auth.user.uType == 2){
+              this.state.instances.push({
+                UID: temp,
+                status: temp2,
+                link: <div>
+                <Link to={'/bookList/instance/' + this.state.row[i]._id} className="btn-flat waves-effect" style={{textDecoration:"underline", color:"blue"}}>
+                  Click to edit instance details
+                </Link>
+              </div>
+              });
+            } else {
+              this.state.instances.push({
+                UID: temp,
+                status: temp2
+              });
+            }
           }
 
+          if(this.props.auth.user.uType != undefined)
           this.setState({
             data: {
               columns: [
@@ -108,8 +161,30 @@ class bookDetails extends Component {
                   width: '50px',
                 },
                 {
-                  label: 'Link',
+                  label: 'Link/s',
                   field: 'link',
+                  width: '50px',
+                }
+              ],
+              rows: this.state.instances
+            }
+          });
+          else
+          this.setState({
+            data: {
+              columns: [
+                {
+                  label: 'Instance',
+                  field: 'UID',
+                  width: '50px',
+                  attributes: {
+                    'aria-controls': 'DataTable',
+                    'aria-label': 'UID',
+                  },
+                },
+                {
+                  label: 'Status',
+                  field: 'status',
                   width: '50px',
                 }
               ],
@@ -241,6 +316,39 @@ class bookDetails extends Component {
     };
 
     Axios.post("/api/logs/createLog", newLog);
+  };
+
+  //change the instance val clicked right now
+  onclickvalue = e => {
+    this.setState({_id: e.target.value});
+  }
+
+  onSubmitBorrowInstance = e => {
+    e.preventDefault();
+    
+    const borrower = {
+        _id: this.state._id,
+        username: this.props.auth.user.username
+    }
+
+    Axios.post("/api/books/borrowInstance", borrower)
+      .then(res => {
+          window.location.reload(false);
+      })
+      .catch(err => {
+          console.log(err);
+          this.setState({
+              errors: err.response.data
+          });
+      });
+
+      var d = new Date();
+
+      const newLog = {
+        log: this.state._id + " has been borrowed by " + this.props.auth.user.username + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+      };
+  
+      Axios.post("/api/logs/createLog", newLog);
   };
 
   onSubmitAddInstance = e => {
@@ -500,7 +608,6 @@ class bookDetails extends Component {
                     info={false}
                     data={this.state.data}
                     paging={false}
-                    serach={false}
                     searchBottom={false}
                     style={{width: "600px"}}/>
                   </div>
@@ -581,7 +688,6 @@ class bookDetails extends Component {
                   info={false}
                   data={this.state.data}
                   paging={false}
-                  serach={false}
                   searchBottom={false}
                   style={{width: "600px"}}/>
                 </div>
