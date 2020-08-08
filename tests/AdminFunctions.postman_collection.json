@@ -1,0 +1,74 @@
+{
+	"info": {
+		"_postman_id": "90d0a2d7-b698-4dcc-a7fb-43e894569909",
+		"name": "AdminFunctions",
+		"description": "whatever admin can do will be seen here",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fName\": \"Automatic\",\r\n    \"lName\": \"UserCreationTest\",\r\n    \"username\": \"autoUser\",\r\n    \"IDno\": \"450\",\r\n    \"email\": \"ciTEST@test.com\",\r\n    \"password\": \"123456\",\r\n    \"password2\": \"123456\",\r\n    \"secQ\": \"1\",\r\n    \"secA\": \"1234\",\r\n    \"uType\": \"2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://shrouded-tor-61207.herokuapp.com/api/users/register",
+					"protocol": "https",
+					"host": [
+						"shrouded-tor-61207",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"ciTEST@test.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://shrouded-tor-61207.herokuapp.com/api/users/deleteUser",
+					"protocol": "https",
+					"host": [
+						"shrouded-tor-61207",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"users",
+						"deleteUser"
+					]
+				},
+				"description": "delete manager user"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
