@@ -64,7 +64,7 @@ router.post("/deleteBook", (req, res) => {
     if (!bookDetail) {
       return res.status(400).json({bookListData: "book doesnt exist"});
     } else {
-      if(bookDetail.instance > 0){
+      if(bookDetail.instances > 0){
         return res.status(400).json({bookListData: "book has instances"});
       } else {
         Book.deleteOne({title: req.body.title})
