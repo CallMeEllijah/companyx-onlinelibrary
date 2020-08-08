@@ -7,6 +7,7 @@ services:
 
 install:
 - npm install newman
+- npm install
 
 before_script:
 - node --version
