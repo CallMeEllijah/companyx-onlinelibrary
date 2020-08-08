@@ -15,4 +15,8 @@ before_script:
 - node_modules/.bin/newman --version
 
 script:
+<<<<<<< HEAD
 - node_modules/.bin/newman run tests/Logs.postman_collection.json
+=======
+- node_modules/.bin/newman run tests/Books.postman_collection.json
+>>>>>>> parent of 49abcbb... deleted travis
