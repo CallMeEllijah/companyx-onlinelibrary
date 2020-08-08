@@ -63,7 +63,7 @@
 					"script": {
 						"id": "0634ac9a-79f2-4c2b-9fa1-9021e5f3e600",
 						"exec": [
-							"pm.test(\"create logs\", function () {\r",
+							"pm.test(\"register manager\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});"
 						],
@@ -154,7 +154,7 @@
 					"script": {
 						"id": "e0eea685-b679-4987-86f6-f93723264b9f",
 						"exec": [
-							"pm.test(\"create logs\", function () {\r",
+							"pm.test(\"delete user\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});"
 						],
@@ -199,7 +199,7 @@
 					"script": {
 						"id": "a87a56fc-4387-4392-8401-5d3d2982f6c0",
 						"exec": [
-							"pm.test(\"create logs\", function () {\r",
+							"pm.test(\"register user student/teacher\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});"
 						],
@@ -245,7 +245,7 @@
 					"script": {
 						"id": "15e4d0bc-7593-4ca2-a780-07219e958c58",
 						"exec": [
-							"pm.test(\"create logs\", function () {\r",
+							"pm.test(\"create book\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});"
 						],
@@ -290,7 +290,7 @@
 					"script": {
 						"id": "2ca41cef-7516-4db6-815e-5c24a265f30a",
 						"exec": [
-							"pm.test(\"create logs\", function () {\r",
+							"pm.test(\"edit book\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});"
 						],
@@ -335,7 +335,7 @@
 					"script": {
 						"id": "fd5a6177-71fc-4006-bd2e-94235d857ced",
 						"exec": [
-							"pm.test(\"get reviews\", function () {\r",
+							"pm.test(\"create reviews\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});"
 						],
@@ -426,7 +426,7 @@
 					"script": {
 						"id": "521e440e-139e-4f5c-a8c7-e7ac40a6b445",
 						"exec": [
-							"pm.test(\"get reviews\", function () {\r",
+							"pm.test(\"get reviews specific\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});"
 						],
@@ -481,7 +481,7 @@
 					"script": {
 						"id": "1906a2bd-b437-4855-b514-5f4ae0cfd67e",
 						"exec": [
-							"pm.test(\"create logs\", function () {\r",
+							"pm.test(\"delete book\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});"
 						],
@@ -526,7 +526,7 @@
 					"script": {
 						"id": "6db33fed-6b2b-4ab8-b754-32461c82fe9d",
 						"exec": [
-							"pm.test(\"create logs\", function () {\r",
+							"pm.test(\"delete user\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});"
 						],
