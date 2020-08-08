@@ -26,7 +26,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://fierce-shore-19709.herokuapp.com/api/logs/getLogs",
+					"raw": "https://shrouded-tor-61207.herokuapp.com/api/logs/getLogs",
 					"protocol": "https",
 					"host": [
 						"fierce-shore-19709",
@@ -72,7 +72,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://fierce-shore-19709.herokuapp.com/api/logs/createLog",
+					"raw": "https://shrouded-tor-61207.herokuapp.com/api/logs/createLog",
 					"protocol": "https",
 					"host": [
 						"fierce-shore-19709",
