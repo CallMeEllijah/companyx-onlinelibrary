@@ -96,6 +96,51 @@
 				"description": "testing login and receiving of data"
 			},
 			"response": []
+		},
+		{
+			"name": "delete user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e0eea685-b679-4987-86f6-f93723264b9f",
+						"exec": [
+							"pm.test(\"create logs\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"ciTEST@test.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://shrouded-tor-61207.herokuapp.com/api/users/deleteUser",
+					"protocol": "https",
+					"host": [
+						"shrouded-tor-61207",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"users",
+						"deleteUser"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
