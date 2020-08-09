@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "90d0a2d7-b698-4dcc-a7fb-43e894569909",
 		"name": "BasicFunctions",
-		"description": "whatever admin can do will be seen here",
+		"description": "will have anything that doesnt contains any of the objectID provided by MONGODB",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -328,6 +328,278 @@
 			"response": []
 		},
 		{
+			"name": "add instance",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b4a15365-d82c-49cb-908a-5acd298f39fe",
+						"exec": [
+							"pm.test(\"add custom instance\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\": \"1234567890\",\r\n    \"title\": \"ciTestCreateBook\",\r\n    \"name\": \"\",\r\n    \"status\": \"available\",\r\n    \"dateA\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://shrouded-tor-61207.herokuapp.com/api/books/addinstance",
+					"protocol": "https",
+					"host": [
+						"shrouded-tor-61207",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"books",
+						"addinstance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "borrow instance",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9f538d2f-8d82-48e3-a2f9-5cc5a358b803",
+						"exec": [
+							"pm.test(\"borrow custom instance\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\": \"1234567890\",\r\n    \"username\": \"autoUser\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://shrouded-tor-61207.herokuapp.com/api/books/borrowInstance",
+					"protocol": "https",
+					"host": [
+						"shrouded-tor-61207",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"books",
+						"borrowInstance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get books specific user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2fdd9781-ab9d-4163-b399-036b6da0fa77",
+						"exec": [
+							"pm.test(\"get profile books\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"autoUser\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://shrouded-tor-61207.herokuapp.com/api/books/getBooksProfile",
+					"protocol": "https",
+					"host": [
+						"shrouded-tor-61207",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"books",
+						"getBooksProfile"
+					]
+				},
+				"description": "gets the borrowed books of a specific user"
+			},
+			"response": []
+		},
+		{
+			"name": "get specific instance",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a9dfaca8-ddde-4f0b-9959-2fa8a821b649",
+						"exec": [
+							"pm.test(\"get one instance\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\" : \"1234567890\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://shrouded-tor-61207.herokuapp.com/api/books/getOneInstance",
+					"protocol": "https",
+					"host": [
+						"shrouded-tor-61207",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"books",
+						"getOneInstance"
+					]
+				},
+				"description": "get instance details of one"
+			},
+			"response": []
+		},
+		{
+			"name": "edit one instance",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b0db30d8-f87a-4a75-bb8b-6dc973d39a38",
+						"exec": [
+							"pm.test(\"edit custom instance\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\": \"1234567890\",\r\n    \"status\": \"available\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://shrouded-tor-61207.herokuapp.com/api/books/editOneInstance",
+					"protocol": "https",
+					"host": [
+						"shrouded-tor-61207",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"books",
+						"editOneInstance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete instance",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b53e83f9-5731-4cac-8741-39886caaadd1",
+						"exec": [
+							"pm.test(\"delete custom instance\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\": \"1234567890\",\r\n    \"title\": \"ciTestCreateBook\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://shrouded-tor-61207.herokuapp.com/api/books/deleteOneInstance",
+					"protocol": "https",
+					"host": [
+						"shrouded-tor-61207",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"books",
+						"deleteOneInstance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "create reviews",
 			"event": [
 				{
@@ -415,6 +687,51 @@
 					]
 				},
 				"description": "getting reviews of one book"
+			},
+			"response": []
+		},
+		{
+			"name": "get history of borrowed books",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d607f292-2ab4-4bed-93a9-30cc415fd1f2",
+						"exec": [
+							"pm.test(\"get book history\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"autoUser\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://shrouded-tor-61207.herokuapp.com/api/books/getBooksHistory",
+					"protocol": "https",
+					"host": [
+						"shrouded-tor-61207",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"books",
+						"getBooksHistory"
+					]
+				}
 			},
 			"response": []
 		},
@@ -645,6 +962,28 @@
 				"description": "getting of system logs"
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "a6b15394-904c-46ab-b3a9-f347347cd0fa",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "a79889ee-316d-4404-b8b6-f6a10efa54ba",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	],
 	"protocolProfileBehavior": {}
