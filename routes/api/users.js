@@ -106,7 +106,7 @@ router.post("/changePassword", (req, res) => {
           .json({ passwordincorrect: "Old password incorrect" });
       }
     });
-  });
+  }).catch(err => {return res.status(400).json(err)});
 });
 
 // @route POST api/users/login

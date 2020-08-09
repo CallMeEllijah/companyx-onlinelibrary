@@ -76,7 +76,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"fName\": \"Automatic\",\r\n    \"lName\": \"UserCreationTest\",\r\n    \"username\": \"autoUser\",\r\n    \"IDno\": \"450\",\r\n    \"email\": \"ciTEST@test.com\",\r\n    \"password\": \"123456\",\r\n    \"password2\": \"123456\",\r\n    \"secQ\": \"1\",\r\n    \"secA\": \"1234\",\r\n    \"uType\": \"2\"\r\n}",
+					"raw": "{\r\n    \"fName\": \"Automatic\",\r\n    \"lName\": \"UserCreationTest\",\r\n    \"username\": \"autoUser\",\r\n    \"IDno\": \"450\",\r\n    \"email\": \"ciTEST@test.com\",\r\n    \"password\": \"1234567\",\r\n    \"password2\": \"1234567\",\r\n    \"secQ\": \"1\",\r\n    \"secA\": \"1234\",\r\n    \"uType\": \"2\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -97,6 +97,52 @@
 						"register"
 					]
 				}
+			},
+			"response": []
+		},
+		{
+			"name": "change password user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0b54062d-737f-4d5c-a498-1ca1d158632a",
+						"exec": [
+							"pm.test(\"register user student/teacher\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"ciTEST@test.com\",\r\n    \"password\": \"1234567\",\r\n    \"password2\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://shrouded-tor-61207.herokuapp.com/api/users/changePassword",
+					"protocol": "https",
+					"host": [
+						"shrouded-tor-61207",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"users",
+						"changePassword"
+					]
+				},
+				"description": "register normal user for testing of fucntions\r\n"
 			},
 			"response": []
 		},
