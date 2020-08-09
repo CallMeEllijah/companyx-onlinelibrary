@@ -200,19 +200,19 @@ router.post("/borrowInstance", (req, res) => {
           dateA: "wait for book to be returned"
       })
       .then(instanceDetail => res.json(instanceDetail))
-      .catch(err => console.log(err));
+      .catch(err => {return res.status(400)});
       
       var history = new BorrowedHistory({title: instanceDetail.title, name: req.body.username, date: today })
       history.save();
 
+      return res.status(200).json({test: "worked"});  
     } else {
       return res
       .status(400)
       .json({stat: "instance doesnt exist"});
     }
-  });
+  }).catch(err => {return res.status(400)});
 
-    return res.status(200).json({test: "worked"});
 })
 
 //this is just when u update the name of the book this renames all the instances (doing this we wont have
@@ -240,30 +240,51 @@ router.post("/addInstance", (req, res) => {
     const addinstancequery = {"title": req.body.title};
     const addinstanceupdate = {$inc: { instances: 1} };
 
-    var instance = new Instance({
-        title: req.body.title, name: req.body.name, status: req.body.status, dateA: req.body.dateA})
+    if(req.body._id != undefined){
+      var instance = new Instance({
+        _id: req.body._id, title: req.body.title, name: req.body.name, status: req.body.status, dateA: req.body.dateA})
 
-    instance.save()
-      .then(rec => console.log(rec))
-      .catch(err => {return res.status(400).json(err)});
+      instance.save()
+        .then(rec => console.log(rec))
+        .catch(err => {return res.status(400).json(err)});
 
-    Book.updateOne(addinstancequery, addinstanceupdate)
-      .then(rec => {return res.status(200).json(rec)})
-      .catch(err => {return res.status(400).json(err)});
+      Book.updateOne(addinstancequery, addinstanceupdate)
+        .then(rec => {return res.status(200).json(rec)})
+        .catch(err => {return res.status(400).json(err)});
+    } else {
+      var instance = new Instance({
+          title: req.body.title, name: req.body.name, status: req.body.status, dateA: req.body.dateA})
+  
+      instance.save()
+        .then(rec => console.log(rec))
+        .catch(err => {return res.status(400).json(err)});
+  
+      Book.updateOne(addinstancequery, addinstanceupdate)
+        .then(rec => {return res.status(200).json(rec)})
+        .catch(err => {return res.status(400).json(err)});
+    }
 });
 
-//delete a book instance                                                  EDIT THIS
+//delete a book instance                                                  EDIT THIS add if borrowed
 router.post("/deleteOneInstance", (req, res) => {
   console.log(req.body._id);
 
   const addinstancequery = {"title": req.body.title};
   const addinstanceupdate = {$inc: { instances: -1} };
 
-  Instance.deleteOne({_id: req.body._id});
+  Instance.findOne({_id: req.body._id}).then(instance => {
+    if(instance == null){
+      return res.status(400).json({status: "instance doesnt exist"});
+    }
 
-  Book.updateOne(addinstancequery, addinstanceupdate)
-    .then(rec => {return res.status(200).json(rec)})
-    .catch(err => {return res.status(400).json(err)});
+    if(instance != null){
+      Instance.deleteOne({_id: req.body._id}).then(rec => console.log(rec)).catch(err => {return res.status(400).json(err)});
+
+      Book.updateOne(addinstancequery, addinstanceupdate)
+        .then(rec => {return res.status(200).json(rec)})
+        .catch(err => {return res.status(400).json(err)});
+    }
+ }).catch(err => {return res.status(400).json(err)});
 });
 
 //create review
