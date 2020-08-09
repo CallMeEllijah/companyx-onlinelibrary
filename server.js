@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
+const path = require("path");
 
 //every add of model + route, lagay dito tapos lagay dun sa baba routes
 const users = require("./routes/api/users");
@@ -40,6 +41,13 @@ require("./config/passport")(passport);
 app.use("/api/users", users);
 app.use("/api/books", books);
 app.use("/api/logs", logs);
+
+if(process.env.NODE_ENV === 'production'){
+  app.use(express.static('client/build'));
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(_dirname, 'client', 'build', 'index.html'));
+  });
+}
 
 const port = process.env.PORT || 5000;
 
