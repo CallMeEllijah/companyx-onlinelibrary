@@ -16,7 +16,7 @@ CompanyX-OnlineLibrary is an online library directory and database system. It ai
 
 2. In the client (sub directory: client)  run ```npm  install```to install all of the dependencies.
 
-3.In the base app (main directory: companyx-onlinelibrary) open 2 command prompts and run:
+3. In the base app (main directory: companyx-onlinelibrary) open 2 command prompts and run:
   * ```npm run server``` to run the back end/start server.
   * ```npm run client``` to run the front end.
 
