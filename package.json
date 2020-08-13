@@ -7,7 +7,6 @@
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
-    "test":"jest",
     "heroku-postbuild": "cd client && yarn install && npm run build"
   },
   "author": "",
@@ -25,8 +24,6 @@
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "validator": "^10.9.0"
-  },
-  "devDependencies": {
   },
   "engines": {
     "node": "12.18.1",
