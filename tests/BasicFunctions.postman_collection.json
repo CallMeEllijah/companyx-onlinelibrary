@@ -394,7 +394,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"_id\": \"0723\",\r\n    \"title\": \"ciTestCreateBook\",\r\n    \"name\": \"\",\r\n    \"status\": \"available\",\r\n    \"dateA\": \"\"\r\n}",
+					"raw": "{\r\n    \"_id\": \"1234567890\",\r\n    \"title\": \"ciTestCreateBook\",\r\n    \"name\": \"\",\r\n    \"status\": \"available\",\r\n    \"dateA\": \"\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
