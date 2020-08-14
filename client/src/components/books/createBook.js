@@ -149,7 +149,7 @@ class createBook extends Component {
                         value={this.state.isbn}
                         error={errors.isbn}
                         id="isbn"
-                        type="text"
+                        type="number"
                         className={classnames("", {
                             invalid: errors.isbn
                         })}

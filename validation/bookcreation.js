@@ -32,6 +32,9 @@ module.exports = function validateBookInput(data) {
   if (Validator.isEmpty(data.isbn)) {
     errors.isbn = "ISBN field is required";
   }
+  if (!Validator.isLength(data.isbn, { min: 13, max: 13 })) {
+    errors.isbn = "ISBN must be 13 numbers";
+  }
 
   // callno checks
   if (Validator.isEmpty(data.callno)) {
