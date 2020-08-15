@@ -10,7 +10,7 @@ CompanyX-OnlineLibrary is an online library directory and database system. It ai
 * Toledo, Aliyah Dana
 * Xu, Aaron John
 
-## Setup
+## Setup (running on local machine)
 
 1. In the base app (main directory: companyx-onlinelibrary) run ```npm  install```to install all of the dependencies.
 
@@ -21,3 +21,7 @@ CompanyX-OnlineLibrary is an online library directory and database system. It ai
   * ```npm run client``` to run the front end.
 
 4. Open a new browser tab and type **http://localhost:3000** to launch the **Front End/ Client**.
+
+## Access (deployed version)
+
+1. Click the link { https://shrouded-tor-61207.herokuapp.com/ } to access deployed version of project
