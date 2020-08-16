@@ -304,7 +304,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"ciTestCreateBook\",\r\n    \"authors\": \"ciTestAuthor\",\r\n    \"year\": \"2020\",\r\n    \"isbn\": \"1234567890013\",\r\n    \"callno\": \"000\"\r\n}",
+					"raw": "{\r\n    \"title\": \"ciTestCreateBook\",\r\n    \"authors\": \"ciTestAuthor\",\r\n    \"year\": \"2020\",\r\n    \"isbn\": \"1234567890123\",\r\n    \"callno\": \"000\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -349,7 +349,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"oldTitle\": \"ciTestCreateBook\",\r\n    \"title\": \"ciTestCreateBook\",\r\n    \"authors\": \"ciTestAuthorEdit\",\r\n    \"year\": \"2020\",\r\n    \"isbn\": \"1234567890\",\r\n    \"callno\": \"000\"\r\n}",
+					"raw": "{\r\n    \"oldTitle\": \"ciTestCreateBook\",\r\n    \"title\": \"ciTestCreateBook\",\r\n    \"authors\": \"ciTestAuthorEdit\",\r\n    \"year\": \"2020\",\r\n    \"isbn\": \"1234567890123\",\r\n    \"callno\": \"000\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -394,7 +394,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"_id\": \"1234567890\",\r\n    \"title\": \"ciTestCreateBook\",\r\n    \"name\": \"\",\r\n    \"status\": \"available\",\r\n    \"dateA\": \"\"\r\n}",
+					"raw": "{\r\n    \"_id\": \"6f12db3aab4e5e789cb12eb3\",\r\n    \"title\": \"ciTestCreateBook\",\r\n    \"name\": \"\",\r\n    \"status\": \"available\",\r\n    \"dateA\": \"\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -439,7 +439,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"_id\": \"1234567890\",\r\n    \"username\": \"autoUser\"\r\n}",
+					"raw": "{\r\n    \"_id\": \"6f12db3aab4e5e789cb12eb3\",\r\n    \"username\": \"autoUser\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -530,7 +530,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"_id\" : \"1234567890\"\r\n}",
+					"raw": "{\r\n    \"_id\" : \"6f12db3aab4e5e789cb12eb3\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -576,7 +576,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"_id\": \"1234567890\",\r\n    \"status\": \"available\"\r\n}",
+					"raw": "{\r\n    \"_id\": \"6f12db3aab4e5e789cb12eb3\",\r\n    \"status\": \"available\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -621,7 +621,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"_id\": \"1234567890\",\r\n    \"title\": \"ciTestCreateBook\"\r\n}",
+					"raw": "{\r\n    \"_id\": \"6f12db3aab4e5e789cb12eb3\",\r\n    \"title\": \"ciTestCreateBook\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

@@ -189,6 +189,7 @@ router.post("/borrowInstance", (req, res) => {
 
   var d =  new Date();
   var today = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
+  var duedate = (d.getFullYear()+1)+'-'+(d.getMonth()+1)+'-'+(d.getDate());
 
   Instance.findOne({ _id: req.body._id }).then(instanceDetail => {
     if (instanceDetail) {
@@ -197,10 +198,10 @@ router.post("/borrowInstance", (req, res) => {
       .updateOne({
           name: req.body.username,
           status: "borrowed",
-          dateA: "wait for book to be returned"
+          dateA: duedate
       })
       .then(instanceDetail => res.json(instanceDetail))
-      .catch(err => {return res.status(400)});
+      .catch(err => {return res.status(400).json(err)});
       
       var history = new BorrowedHistory({title: instanceDetail.title, name: req.body.username, date: today })
       history.save();
@@ -257,7 +258,7 @@ router.post("/addInstance", (req, res) => {
   
       instance.save()
         .then(rec => console.log(rec))
-        .catch(err => {return res.status(400).json(err)});
+        .catch(err => {console.log(err); return res.status(400).json(err)});
   
       Book.updateOne(addinstancequery, addinstanceupdate)
         .then(rec => {return res.status(200).json(rec)})

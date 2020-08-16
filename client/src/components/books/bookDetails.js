@@ -259,20 +259,20 @@ class bookDetails extends Component {
             data2: {
               columns: [
                 {
-                  label: 'Status',
-                  field: 'Status',
+                  label: 'Reviews',
+                  field: 'review',
                   width: '50px'
                 }
               ],
               rows: [{
-                Status: "no reviews available as of " + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+                review: "no reviews available as of " + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
               }]
             }
           });
         });
   }
 
-/* this will be for the fucking manager to edit*/
+/* this will be for the manager to edit*/
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
       this.setState({
@@ -555,7 +555,7 @@ class bookDetails extends Component {
                   </form>
                   
                   <div style={{width: "auto", height: "auto", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", marginTop: "50px"}}>
-                    <h3><b>Borrowable Book List</b></h3>
+                    <h3><b>Available Book List</b></h3>
                     <MDBDataTableV5
                     hover
                     info={false}
@@ -575,7 +575,7 @@ class bookDetails extends Component {
     } else if (this.props.auth.user.uType === "1"){
         return (
             <div style={{ height: "75vh", display: "flex", alignItems: "start"}} className="container valign-wrapper row left-aligned">
-                <div style={{ height: "100%", width: "25%"}}>
+                <div style={{ height: "100%"}}>
                   <Link to="/bookList" className="btn-flat waves-effect">
                       <i className="material-icons left">keyboard_backspace</i> Back
                   </Link>
@@ -602,7 +602,7 @@ class bookDetails extends Component {
                       </div>
                   </form>
                   <div style={{width: "auto", height: "auto", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", marginTop: "50px"}}>
-                    <h3><b>Borrowable Book List</b></h3>
+                    <h3><b>Available Book List</b></h3>
                     <MDBDataTableV5
                     hover
                     info={false}
@@ -682,7 +682,7 @@ class bookDetails extends Component {
                     </div>
                 </form>
                 <div style={{width: "auto", height: "auto", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", marginTop: "50px"}}>
-                  <h3><b>Borrowable Book List</b></h3>
+                  <h3><b>Available Book List</b></h3>
                   <MDBDataTableV5
                   hover
                   info={false}
