@@ -44,11 +44,11 @@ class Dashboard extends Component {
       row4: res.data
     });
     for(var j = 0; j < this.state.row4.length; j++){
-      var _id = this.state.row4[j]._id;
+      var date = this.state.row4[j].dateA;
       var tit = this.state.row4[j].title;
 
       this.state.instances4.push({
-        _id: _id,
+        dateA: date,
         title: tit
       });
     }
@@ -57,18 +57,18 @@ class Dashboard extends Component {
       data4: {
         columns: [
           {
-            label: 'UID (pending removal of column)',
-            field: '_id',
+          label: 'Title',
+          field: 'title',
+          width: '50px',
+          },
+          {
+            label: 'Due Date',
+            field: 'dateA',
             width: '50px',
             attributes: {
               'aria-controls': 'DataTable',
-              'aria-label': '_id',
+              'aria-label': 'dueDate',
             },
-          },
-          {
-            label: 'Title',
-            field: 'title',
-            width: '50px',
           }
         ],
         rows: this.state.instances4

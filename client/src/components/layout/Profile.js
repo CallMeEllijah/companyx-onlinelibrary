@@ -265,7 +265,7 @@ class Profile extends Component {
                     paging={false}
                     searching={false}
                     style={{width: "600px"}}/>
-              <h3><b>Book/s Currently Borrowed</b></h3>
+              <h3><b>Past Book/s Borrowed</b></h3>
                   <MDBDataTableV5
                     hover
                     info={false}

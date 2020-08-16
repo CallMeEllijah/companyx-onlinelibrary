@@ -10,7 +10,7 @@ CompanyX-OnlineLibrary is an online library directory and database system. It ai
 * Toledo, Aliyah Dana
 * Xu, Aaron John
 
-## Setup (running on local machine)
+## Setup (for development running on local machine)
 
 1. In the base app (main directory: companyx-onlinelibrary) run ```npm  install```to install all of the dependencies.
 

@@ -154,7 +154,7 @@ class createBook extends Component {
                             invalid: errors.isbn
                         })}
                         />
-                        <label htmlFor="isbn">ISBN</label>
+                        <label htmlFor="isbn">ISBN (13 digits)</label>
                         <span className="red-text">{errors.isbn}</span>
                     </div>
     
