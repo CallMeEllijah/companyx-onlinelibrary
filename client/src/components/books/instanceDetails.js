@@ -73,7 +73,7 @@ class instanceDetails extends Component {
 
     Axios.post("/api/books/editOneInstance", this.state)
         .then(res => {
-            window.location.reload(false);
+            this.props.history.goBack();
         })
         .catch(err => {
             console.log(err);
@@ -130,7 +130,7 @@ class instanceDetails extends Component {
 
     Axios.post("/api/books/borrowInstance", borrower)
       .then(res => {
-          window.location.reload(false);
+        this.props.history.goBack();
       })
       .catch(err => {
           console.log(err);

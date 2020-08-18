@@ -333,7 +333,7 @@ class bookDetails extends Component {
 
     Axios.post("/api/books/borrowInstance", borrower)
       .then(res => {
-          window.location.reload(false);
+        this.props.history.goBack();
       })
       .catch(err => {
           console.log(err);
