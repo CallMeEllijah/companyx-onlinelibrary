@@ -32,6 +32,7 @@ import successAddInstance from "./components/successpages/successAddInstance";
 import successBookDelete from "./components/successpages/successBookDelete";
 import successDeleteInstance from "./components/successpages/successDeleteInstance";
 import successAddReview from "./components/successpages/successAddReview";
+import successBookBorrow from "./components/successpages/successBookBorrow";
 
 import "./App.css";
 
@@ -83,6 +84,7 @@ class App extends Component {
             <Route exact path="/successAddInstance" component={successAddInstance} />
             <Route exact path="/successDeleteInstance" component={successDeleteInstance} />
             <Route exact path="/successAddReview" component={successAddReview} />
+            <Route exact path="/successBookBorrow" component={successBookBorrow} />
 
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
