@@ -39,6 +39,36 @@ Invalid Password
     Get Element Attribute  css=.input-field:nth-child(2) > .red-text      Password incorrect
     Close Browser
 
+
+No Email
+    Initialize Login
+    Input Password  123456
+    click Button    xpath=//button[@type='submit']
+    Get Element Attribute  css=.input-field:nth-child(1) > .red-text      Email field is required
+    Close Browser
+
+No Password Valid Email
+    Initialize Login
+    Input Username  test1@test.test
+    click Button    xpath=//button[@type='submit']
+    Get Element Attribute  css=.input-field:nth-child(2) > .red-text      Password field is required
+    Close Browser
+
+No Password Unknown Email
+    Initialize Login
+    Input Username  test@test.test
+    click Button    xpath=//button[@type='submit']
+    Get Element Attribute  css=.input-field:nth-child(2) > .red-text      Password field is required
+    Close Browser
+
+No Password Invalid Email
+    Initialize Login
+    Input Username  test@test.test
+    click Button    xpath=//button[@type='submit']
+    Get Element Attribute  css=.input-field:nth-child(1) > .red-text      Email is invalid
+    Close Browser
+    
+
 No Email and Password
     Initialize Login
     click Button    xpath=//button[@type='submit']
