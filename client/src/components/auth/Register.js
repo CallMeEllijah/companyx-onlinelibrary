@@ -398,16 +398,16 @@ class Register extends Component {
                   <span className="red-text">{errors.password2}</span>
                 </div>
                 <div >
-                  <label>Browser Select</label>
+                  <label>Security Question</label>
                   <select className="browser-default"
                       onChange={this.onChange}
                       value={this.state.secQ}
                       error={errors.secQ}
                       id="secQ">
-                    <option value="" disabled selected>Choose your option</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
+                    <option value="" disabled selected>Choose your Security Question</option>
+                    <option value="1">Question 1</option>
+                    <option value="2">Question 2</option>
+                    <option value="3">Question 3</option>
                   </select>
                   <span className="red-text">{errors.secQ}</span>
                 </div>
