@@ -1,3 +1,5 @@
+# to run go to Client folder 
+# Open cmd type "robot test_robot"
 *** Settings ***
 Documentation     A resource file with reusable keywords and variables.
 ...
@@ -34,5 +36,9 @@ Input Password
     [Arguments]    ${password}
     Input Text    password    ${password}
 
+Initialize Login
+    Welcome Page
+    click Link  css=.col:nth-child(9) > .btn
+    Get Element Attribute  css=h4    Login below
 
 
