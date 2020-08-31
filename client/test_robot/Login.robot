@@ -14,7 +14,6 @@ Valid Login
     Get Element Attribute  xpath=//p      Welcome to your dashboard
     Close Browser
 
-
 Invalid Email1
     Initialize Login
     Input Username  test
@@ -74,4 +73,24 @@ No Email and Password
     click Button    xpath=//button[@type='submit']
     Get Element Attribute  css=.input-field:nth-child(1) > .red-text      Email field is required
     Get Element Attribute  css=.input-field:nth-child(2) > .red-text      Password field is required
+    Close Browser
+    
+Display Profile
+    Initialize Login
+    Input Username    test1@test.test
+    Input Password    123456
+    click Button    xpath=//button[@type='submit']
+    Get Element Attribute  xpath=//p      Welcome to your dashboard
+    Sleep    2
+    click Button    xpath=//*[@id="root"]//div//div[2]//div//div//button[1]
+    Close Browser
+    
+Browse Books
+    Initialize Login
+    Input Username    test1@test.test
+    Input Password    123456
+    click Button    xpath=//button[@type='submit']
+    Get Element Attribute  xpath=//p      Welcome to your dashboard
+    Sleep    2
+    click Button    xpath=//*[@id="root"]//div//div[2]//div//div//button[2]
     Close Browser
