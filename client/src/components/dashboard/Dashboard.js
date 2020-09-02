@@ -252,7 +252,7 @@ class Dashboard extends Component {
           <div className="row">
             <div className="landing-copy col s12 center-align">
               <h4>
-                <b style={{fontSize: "50px"}}>Hello there</b>
+                <b style={{fontSize: "50px"}}>Hey there, <p style={{color: "green"}}>{user.fName}</p></b>
                 <p className="flow-text grey-text text-darken-1">
                   Welcome to your dashboard
                 </p>
