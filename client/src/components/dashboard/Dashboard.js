@@ -157,7 +157,7 @@ class Dashboard extends Component {
                   marginTop: "1rem"
                 }}
                 onClick={this.onBookListClick}
-                className="btn btn-large waves-effect waves-light hoverable darkgreen accent-3">
+                className="btn btn-large waves-effect waves-light hoverable blue accent-3">
                 Existing Books
               </button>
               <br></br>
@@ -215,7 +215,7 @@ class Dashboard extends Component {
                   marginTop: "1rem"
                 }}
                 onClick={this.onBookListClick}
-                className="btn btn-large waves-effect waves-light hoverable darkgreen accent-3">
+                className="btn btn-large waves-effect waves-light hoverable blue accent-3">
                 Existing Books
               </button>
               <br></br>
@@ -277,7 +277,7 @@ class Dashboard extends Component {
                   marginTop: "1rem"
                 }}
                 onClick={this.onRegisterClick}
-                className="btn btn-large waves-effect waves-light hoverable darkgreen accent-3">
+                className="btn btn-large waves-effect waves-light hoverable blue accent-3">
                 Register Manager
               </button>
               <br></br>
