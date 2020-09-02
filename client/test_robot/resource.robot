@@ -1,5 +1,10 @@
 # to run go to Client folder 
 # Open cmd type "robot test_robot"
+#Valid users
+#studentuser@test.test
+#manageruser@test.test
+#adminuser@test.test
+
 *** Settings ***
 Documentation     A resource file with reusable keywords and variables.
 ...
@@ -12,7 +17,7 @@ Library           SeleniumLibrary
 ${URL}         https://shrouded-tor-61207.herokuapp.com/
 ${BROWSER}        chrome
 ${DELAY}          0
-${VALID USER}     test1@test.test
+${VALID USER}     studentuser@test.test
 ${VALID PASSWORD}    123456
 ${LOGIN URL}      https://shrouded-tor-61207.herokuapp.com/login
 ${REGISTER URL}    https://shrouded-tor-61207.herokuapp.com/register

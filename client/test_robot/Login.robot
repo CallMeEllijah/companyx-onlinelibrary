@@ -8,7 +8,7 @@ Resource          resource.robot
 *** Test Cases ***
 Valid Login
     Initialize Login
-    Input Username    test1@test.test
+    Input Username    studentuser@test.test
     Input Password    123456
     click Button    xpath=//button[@type='submit']
     Get Element Attribute  xpath=//p      Welcome to your dashboard
@@ -77,7 +77,7 @@ No Email and Password
     
 Display Profile
     Initialize Login
-    Input Username    test1@test.test
+    Input Username    studentuser@test.test
     Input Password    123456
     click Button    xpath=//button[@type='submit']
     Get Element Attribute  xpath=//p      Welcome to your dashboard
@@ -87,7 +87,7 @@ Display Profile
     
 Browse Books
     Initialize Login
-    Input Username    test1@test.test
+    Input Username    studentuser@test.test
     Input Password    123456
     click Button    xpath=//button[@type='submit']
     Get Element Attribute  xpath=//p      Welcome to your dashboard

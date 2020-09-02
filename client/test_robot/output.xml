@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.1 (Python 3.8.2 on win32)" generated="20200829 18:16:45.670" rpa="false">
-<suite id="s1" name="Temp" source="C:\Users\User\Documents\GitHub\companyx-onlinelibrary\client\test_robot\temp.robot">
-<test id="s1-t1" name="No Email">
+<robot generator="Robot 3.2.1 (Python 3.8.2 on win32)" generated="20200902 16:18:17.811" rpa="false">
+<suite id="s1" name="Login" source="C:\Users\User\Documents\GitHub\companyx-onlinelibrary\client\test_robot\Login.robot">
+<test id="s1-t1" name="Valid Login">
 <kw name="Initialize Login" library="resource">
 <kw name="Welcome Page" library="resource">
 <kw name="Open Browser" library="SeleniumLibrary">
@@ -10,19 +10,19 @@
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20200829 18:16:46.587" level="INFO">Opening browser 'chrome' to base url 'https://shrouded-tor-61207.herokuapp.com/'.</msg>
-<status status="PASS" starttime="20200829 18:16:46.587" endtime="20200829 18:17:36.952"></status>
+<msg timestamp="20200902 16:18:27.020" level="INFO">Opening browser 'chrome' to base url 'https://shrouded-tor-61207.herokuapp.com/'.</msg>
+<status status="PASS" starttime="20200902 16:18:27.019" endtime="20200902 16:19:27.593"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200829 18:17:36.952" endtime="20200829 18:17:39.184"></status>
+<status status="PASS" starttime="20200902 16:19:27.594" endtime="20200902 16:19:30.019"></status>
 </kw>
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <doc>Sets the delay that is waited after each Selenium command.</doc>
 <arguments>
 <arg>${DELAY}</arg>
 </arguments>
-<status status="PASS" starttime="20200829 18:17:39.184" endtime="20200829 18:17:39.185"></status>
+<status status="PASS" starttime="20200902 16:19:30.020" endtime="20200902 16:19:30.021"></status>
 </kw>
 <kw name="Home Page Should Be Open" library="resource">
 <kw name="Get Element Attribute" library="SeleniumLibrary">
@@ -31,19 +31,19 @@
 <arg>css=h3</arg>
 <arg>Company X : an online library platform</arg>
 </arguments>
-<status status="PASS" starttime="20200829 18:17:39.188" endtime="20200829 18:17:39.340"></status>
+<status status="PASS" starttime="20200902 16:19:30.025" endtime="20200902 16:19:30.101"></status>
 </kw>
-<status status="PASS" starttime="20200829 18:17:39.186" endtime="20200829 18:17:39.340"></status>
+<status status="PASS" starttime="20200902 16:19:30.022" endtime="20200902 16:19:30.101"></status>
 </kw>
-<status status="PASS" starttime="20200829 18:16:46.586" endtime="20200829 18:17:39.342"></status>
+<status status="PASS" starttime="20200902 16:18:27.019" endtime="20200902 16:19:30.101"></status>
 </kw>
 <kw name="Click Link" library="SeleniumLibrary">
 <doc>Clicks a link identified by ``locator``.</doc>
 <arguments>
 <arg>css=.col:nth-child(9) &gt; .btn</arg>
 </arguments>
-<msg timestamp="20200829 18:17:39.343" level="INFO">Clicking link 'css=.col:nth-child(9) &gt; .btn'.</msg>
-<status status="PASS" starttime="20200829 18:17:39.342" endtime="20200829 18:17:39.725"></status>
+<msg timestamp="20200902 16:19:30.102" level="INFO">Clicking link 'css=.col:nth-child(9) &gt; .btn'.</msg>
+<status status="PASS" starttime="20200902 16:19:30.102" endtime="20200902 16:19:30.391"></status>
 </kw>
 <kw name="Get Element Attribute" library="SeleniumLibrary">
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
@@ -51,9 +51,24 @@
 <arg>css=h4</arg>
 <arg>Login below</arg>
 </arguments>
-<status status="PASS" starttime="20200829 18:17:39.726" endtime="20200829 18:17:39.991"></status>
+<status status="PASS" starttime="20200902 16:19:30.392" endtime="20200902 16:19:30.450"></status>
 </kw>
-<status status="PASS" starttime="20200829 18:16:46.585" endtime="20200829 18:17:39.992"></status>
+<status status="PASS" starttime="20200902 16:18:27.018" endtime="20200902 16:19:30.451"></status>
+</kw>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>studentuser@test.test</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>email</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20200902 16:19:30.453" level="INFO">Typing text 'studentuser@test.test' into text field 'email'.</msg>
+<status status="PASS" starttime="20200902 16:19:30.453" endtime="20200902 16:19:31.687"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:19:30.452" endtime="20200902 16:19:31.688"></status>
 </kw>
 <kw name="Input Password" library="resource">
 <arguments>
@@ -65,30 +80,34 @@
 <arg>password</arg>
 <arg>${password}</arg>
 </arguments>
-<msg timestamp="20200829 18:17:39.996" level="INFO">Typing text '123456' into text field 'password'.</msg>
-<status status="PASS" starttime="20200829 18:17:39.995" endtime="20200829 18:17:40.552"></status>
+<msg timestamp="20200902 16:19:31.705" level="INFO">Typing text '123456' into text field 'password'.</msg>
+<status status="PASS" starttime="20200902 16:19:31.705" endtime="20200902 16:19:32.715"></status>
 </kw>
-<status status="PASS" starttime="20200829 18:17:39.993" endtime="20200829 18:17:40.552"></status>
+<status status="PASS" starttime="20200902 16:19:31.703" endtime="20200902 16:19:32.716"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks the button identified by ``locator``.</doc>
 <arguments>
 <arg>xpath=//button[@type='submit']</arg>
 </arguments>
-<msg timestamp="20200829 18:17:40.552" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
-<status status="PASS" starttime="20200829 18:17:40.552" endtime="20200829 18:17:40.811"></status>
+<msg timestamp="20200902 16:19:32.718" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20200902 16:19:32.718" endtime="20200902 16:19:33.801"></status>
 </kw>
 <kw name="Get Element Attribute" library="SeleniumLibrary">
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
 <arguments>
-<arg>css=.input-field:nth-child(1) &gt; .red-text</arg>
-<arg>Email field is required</arg>
+<arg>xpath=//p</arg>
+<arg>Welcome to your dashboard</arg>
 </arguments>
-<status status="PASS" starttime="20200829 18:17:40.812" endtime="20200829 18:17:40.872"></status>
+<status status="PASS" starttime="20200902 16:19:33.802" endtime="20200902 16:19:33.882"></status>
 </kw>
-<status status="PASS" starttime="20200829 18:16:46.584" endtime="20200829 18:17:40.874" critical="yes"></status>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200902 16:19:33.883" endtime="20200902 16:19:38.850"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:18:27.017" endtime="20200902 16:19:38.850" critical="yes"></status>
 </test>
-<test id="s1-t2" name="No Password Valid Email">
+<test id="s1-t2" name="Invalid Email1">
 <kw name="Initialize Login" library="resource">
 <kw name="Welcome Page" library="resource">
 <kw name="Open Browser" library="SeleniumLibrary">
@@ -97,19 +116,19 @@
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20200829 18:17:40.994" level="INFO">Opening browser 'chrome' to base url 'https://shrouded-tor-61207.herokuapp.com/'.</msg>
-<status status="PASS" starttime="20200829 18:17:40.992" endtime="20200829 18:18:20.984"></status>
+<msg timestamp="20200902 16:19:38.994" level="INFO">Opening browser 'chrome' to base url 'https://shrouded-tor-61207.herokuapp.com/'.</msg>
+<status status="PASS" starttime="20200902 16:19:38.993" endtime="20200902 16:20:15.353"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200829 18:18:20.984" endtime="20200829 18:18:23.156"></status>
+<status status="PASS" starttime="20200902 16:20:15.353" endtime="20200902 16:20:17.531"></status>
 </kw>
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <doc>Sets the delay that is waited after each Selenium command.</doc>
 <arguments>
 <arg>${DELAY}</arg>
 </arguments>
-<status status="PASS" starttime="20200829 18:18:23.156" endtime="20200829 18:18:23.157"></status>
+<status status="PASS" starttime="20200902 16:20:17.531" endtime="20200902 16:20:17.532"></status>
 </kw>
 <kw name="Home Page Should Be Open" library="resource">
 <kw name="Get Element Attribute" library="SeleniumLibrary">
@@ -118,19 +137,19 @@
 <arg>css=h3</arg>
 <arg>Company X : an online library platform</arg>
 </arguments>
-<status status="PASS" starttime="20200829 18:18:23.158" endtime="20200829 18:18:23.202"></status>
+<status status="PASS" starttime="20200902 16:20:17.534" endtime="20200902 16:20:17.585"></status>
 </kw>
-<status status="PASS" starttime="20200829 18:18:23.157" endtime="20200829 18:18:23.202"></status>
+<status status="PASS" starttime="20200902 16:20:17.533" endtime="20200902 16:20:17.585"></status>
 </kw>
-<status status="PASS" starttime="20200829 18:17:40.990" endtime="20200829 18:18:23.203"></status>
+<status status="PASS" starttime="20200902 16:19:38.992" endtime="20200902 16:20:17.586"></status>
 </kw>
 <kw name="Click Link" library="SeleniumLibrary">
 <doc>Clicks a link identified by ``locator``.</doc>
 <arguments>
 <arg>css=.col:nth-child(9) &gt; .btn</arg>
 </arguments>
-<msg timestamp="20200829 18:18:23.204" level="INFO">Clicking link 'css=.col:nth-child(9) &gt; .btn'.</msg>
-<status status="PASS" starttime="20200829 18:18:23.204" endtime="20200829 18:18:23.412"></status>
+<msg timestamp="20200902 16:20:17.586" level="INFO">Clicking link 'css=.col:nth-child(9) &gt; .btn'.</msg>
+<status status="PASS" starttime="20200902 16:20:17.586" endtime="20200902 16:20:17.920"></status>
 </kw>
 <kw name="Get Element Attribute" library="SeleniumLibrary">
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
@@ -138,9 +157,221 @@
 <arg>css=h4</arg>
 <arg>Login below</arg>
 </arguments>
-<status status="PASS" starttime="20200829 18:18:23.412" endtime="20200829 18:18:23.483"></status>
+<status status="PASS" starttime="20200902 16:20:17.922" endtime="20200902 16:20:17.998"></status>
 </kw>
-<status status="PASS" starttime="20200829 18:17:40.989" endtime="20200829 18:18:23.484"></status>
+<status status="PASS" starttime="20200902 16:19:38.990" endtime="20200902 16:20:17.998"></status>
+</kw>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>test</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>email</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20200902 16:20:18.001" level="INFO">Typing text 'test' into text field 'email'.</msg>
+<status status="PASS" starttime="20200902 16:20:18.000" endtime="20200902 16:20:18.381"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:20:17.999" endtime="20200902 16:20:18.382"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>123456</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20200902 16:20:18.390" level="INFO">Typing text '123456' into text field 'password'.</msg>
+<status status="PASS" starttime="20200902 16:20:18.387" endtime="20200902 16:20:18.780"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:20:18.384" endtime="20200902 16:20:18.781"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//button[@type='submit']</arg>
+</arguments>
+<msg timestamp="20200902 16:20:18.783" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20200902 16:20:18.782" endtime="20200902 16:20:19.050"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css=.input-field:nth-child(1) &gt; .red-text</arg>
+<arg>Email is invalid</arg>
+</arguments>
+<status status="PASS" starttime="20200902 16:20:19.051" endtime="20200902 16:20:19.112"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200902 16:20:19.113" endtime="20200902 16:20:21.849"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:19:38.988" endtime="20200902 16:20:21.851" critical="yes"></status>
+</test>
+<test id="s1-t3" name="Invalid Email2">
+<kw name="Initialize Login" library="resource">
+<kw name="Welcome Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200902 16:20:21.861" level="INFO">Opening browser 'chrome' to base url 'https://shrouded-tor-61207.herokuapp.com/'.</msg>
+<status status="PASS" starttime="20200902 16:20:21.860" endtime="20200902 16:21:01.666"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200902 16:21:01.667" endtime="20200902 16:21:03.818"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" starttime="20200902 16:21:03.818" endtime="20200902 16:21:03.819"></status>
+</kw>
+<kw name="Home Page Should Be Open" library="resource">
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css=h3</arg>
+<arg>Company X : an online library platform</arg>
+</arguments>
+<status status="PASS" starttime="20200902 16:21:03.822" endtime="20200902 16:21:03.992"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:21:03.819" endtime="20200902 16:21:03.992"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:20:21.859" endtime="20200902 16:21:03.993"></status>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>css=.col:nth-child(9) &gt; .btn</arg>
+</arguments>
+<msg timestamp="20200902 16:21:03.994" level="INFO">Clicking link 'css=.col:nth-child(9) &gt; .btn'.</msg>
+<status status="PASS" starttime="20200902 16:21:03.993" endtime="20200902 16:21:04.818"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css=h4</arg>
+<arg>Login below</arg>
+</arguments>
+<status status="PASS" starttime="20200902 16:21:04.819" endtime="20200902 16:21:04.892"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:20:21.858" endtime="20200902 16:21:04.892"></status>
+</kw>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>test@test.test</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>email</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20200902 16:21:04.895" level="INFO">Typing text 'test@test.test' into text field 'email'.</msg>
+<status status="PASS" starttime="20200902 16:21:04.895" endtime="20200902 16:21:05.431"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:21:04.893" endtime="20200902 16:21:05.432"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>123456</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20200902 16:21:05.439" level="INFO">Typing text '123456' into text field 'password'.</msg>
+<status status="PASS" starttime="20200902 16:21:05.438" endtime="20200902 16:21:05.784"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:21:05.436" endtime="20200902 16:21:05.785"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//button[@type='submit']</arg>
+</arguments>
+<msg timestamp="20200902 16:21:05.792" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20200902 16:21:05.791" endtime="20200902 16:21:06.046"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css=.input-field:nth-child(1) &gt; .red-text</arg>
+<arg>Email is invalid</arg>
+</arguments>
+<status status="PASS" starttime="20200902 16:21:06.047" endtime="20200902 16:21:06.115"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200902 16:21:06.117" endtime="20200902 16:21:08.813"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:20:21.857" endtime="20200902 16:21:08.816" critical="yes"></status>
+</test>
+<test id="s1-t4" name="Invalid Password">
+<kw name="Initialize Login" library="resource">
+<kw name="Welcome Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200902 16:21:08.823" level="INFO">Opening browser 'chrome' to base url 'https://shrouded-tor-61207.herokuapp.com/'.</msg>
+<status status="PASS" starttime="20200902 16:21:08.822" endtime="20200902 16:21:57.393"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200902 16:21:57.394" endtime="20200902 16:21:59.699"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" starttime="20200902 16:21:59.699" endtime="20200902 16:21:59.701"></status>
+</kw>
+<kw name="Home Page Should Be Open" library="resource">
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css=h3</arg>
+<arg>Company X : an online library platform</arg>
+</arguments>
+<status status="PASS" starttime="20200902 16:21:59.702" endtime="20200902 16:21:59.797"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:21:59.701" endtime="20200902 16:21:59.798"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:21:08.822" endtime="20200902 16:21:59.798"></status>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>css=.col:nth-child(9) &gt; .btn</arg>
+</arguments>
+<msg timestamp="20200902 16:21:59.799" level="INFO">Clicking link 'css=.col:nth-child(9) &gt; .btn'.</msg>
+<status status="PASS" starttime="20200902 16:21:59.798" endtime="20200902 16:22:00.179"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css=h4</arg>
+<arg>Login below</arg>
+</arguments>
+<status status="PASS" starttime="20200902 16:22:00.180" endtime="20200902 16:22:00.238"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:21:08.821" endtime="20200902 16:22:00.240"></status>
 </kw>
 <kw name="Input Username" library="resource">
 <arguments>
@@ -152,30 +383,49 @@
 <arg>email</arg>
 <arg>${username}</arg>
 </arguments>
-<msg timestamp="20200829 18:18:23.488" level="INFO">Typing text 'test1@test.test' into text field 'email'.</msg>
-<status status="PASS" starttime="20200829 18:18:23.487" endtime="20200829 18:18:24.056"></status>
+<msg timestamp="20200902 16:22:00.244" level="INFO">Typing text 'test1@test.test' into text field 'email'.</msg>
+<status status="PASS" starttime="20200902 16:22:00.244" endtime="20200902 16:22:01.168"></status>
 </kw>
-<status status="PASS" starttime="20200829 18:18:23.485" endtime="20200829 18:18:24.057"></status>
+<status status="PASS" starttime="20200902 16:22:00.243" endtime="20200902 16:22:01.168"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>qwe123</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20200902 16:22:01.172" level="INFO">Typing text 'qwe123' into text field 'password'.</msg>
+<status status="PASS" starttime="20200902 16:22:01.170" endtime="20200902 16:22:01.487"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:22:01.169" endtime="20200902 16:22:01.488"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks the button identified by ``locator``.</doc>
 <arguments>
 <arg>xpath=//button[@type='submit']</arg>
 </arguments>
-<msg timestamp="20200829 18:18:24.060" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
-<status status="PASS" starttime="20200829 18:18:24.059" endtime="20200829 18:18:24.214"></status>
+<msg timestamp="20200902 16:22:01.494" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20200902 16:22:01.493" endtime="20200902 16:22:01.885"></status>
 </kw>
 <kw name="Get Element Attribute" library="SeleniumLibrary">
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
 <arguments>
 <arg>css=.input-field:nth-child(2) &gt; .red-text</arg>
-<arg>Password field is required</arg>
+<arg>Password incorrect</arg>
 </arguments>
-<status status="PASS" starttime="20200829 18:18:24.216" endtime="20200829 18:18:24.275"></status>
+<status status="PASS" starttime="20200902 16:22:01.893" endtime="20200902 16:22:01.949"></status>
 </kw>
-<status status="PASS" starttime="20200829 18:17:40.986" endtime="20200829 18:18:24.277" critical="yes"></status>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200902 16:22:01.950" endtime="20200902 16:22:07.978"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:21:08.820" endtime="20200902 16:22:07.980" critical="yes"></status>
 </test>
-<test id="s1-t3" name="No Password Unknown Email">
+<test id="s1-t5" name="No Email">
 <kw name="Initialize Login" library="resource">
 <kw name="Welcome Page" library="resource">
 <kw name="Open Browser" library="SeleniumLibrary">
@@ -184,19 +434,19 @@
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20200829 18:18:24.286" level="INFO">Opening browser 'chrome' to base url 'https://shrouded-tor-61207.herokuapp.com/'.</msg>
-<status status="PASS" starttime="20200829 18:18:24.285" endtime="20200829 18:19:19.697"></status>
+<msg timestamp="20200902 16:22:07.989" level="INFO">Opening browser 'chrome' to base url 'https://shrouded-tor-61207.herokuapp.com/'.</msg>
+<status status="PASS" starttime="20200902 16:22:07.988" endtime="20200902 16:22:44.185"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200829 18:19:19.697" endtime="20200829 18:19:21.875"></status>
+<status status="PASS" starttime="20200902 16:22:44.186" endtime="20200902 16:22:46.564"></status>
 </kw>
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <doc>Sets the delay that is waited after each Selenium command.</doc>
 <arguments>
 <arg>${DELAY}</arg>
 </arguments>
-<status status="PASS" starttime="20200829 18:19:21.876" endtime="20200829 18:19:21.876"></status>
+<status status="PASS" starttime="20200902 16:22:46.565" endtime="20200902 16:22:46.565"></status>
 </kw>
 <kw name="Home Page Should Be Open" library="resource">
 <kw name="Get Element Attribute" library="SeleniumLibrary">
@@ -205,19 +455,19 @@
 <arg>css=h3</arg>
 <arg>Company X : an online library platform</arg>
 </arguments>
-<status status="PASS" starttime="20200829 18:19:21.877" endtime="20200829 18:19:21.965"></status>
+<status status="PASS" starttime="20200902 16:22:46.566" endtime="20200902 16:22:46.629"></status>
 </kw>
-<status status="PASS" starttime="20200829 18:19:21.876" endtime="20200829 18:19:21.966"></status>
+<status status="PASS" starttime="20200902 16:22:46.566" endtime="20200902 16:22:46.629"></status>
 </kw>
-<status status="PASS" starttime="20200829 18:18:24.283" endtime="20200829 18:19:21.967"></status>
+<status status="PASS" starttime="20200902 16:22:07.987" endtime="20200902 16:22:46.630"></status>
 </kw>
 <kw name="Click Link" library="SeleniumLibrary">
 <doc>Clicks a link identified by ``locator``.</doc>
 <arguments>
 <arg>css=.col:nth-child(9) &gt; .btn</arg>
 </arguments>
-<msg timestamp="20200829 18:19:21.971" level="INFO">Clicking link 'css=.col:nth-child(9) &gt; .btn'.</msg>
-<status status="PASS" starttime="20200829 18:19:21.969" endtime="20200829 18:19:22.145"></status>
+<msg timestamp="20200902 16:22:46.630" level="INFO">Clicking link 'css=.col:nth-child(9) &gt; .btn'.</msg>
+<status status="PASS" starttime="20200902 16:22:46.630" endtime="20200902 16:22:46.894"></status>
 </kw>
 <kw name="Get Element Attribute" library="SeleniumLibrary">
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
@@ -225,9 +475,191 @@
 <arg>css=h4</arg>
 <arg>Login below</arg>
 </arguments>
-<status status="PASS" starttime="20200829 18:19:22.146" endtime="20200829 18:19:22.182"></status>
+<status status="PASS" starttime="20200902 16:22:46.895" endtime="20200902 16:22:46.958"></status>
 </kw>
-<status status="PASS" starttime="20200829 18:18:24.282" endtime="20200829 18:19:22.182"></status>
+<status status="PASS" starttime="20200902 16:22:07.986" endtime="20200902 16:22:46.959"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>123456</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20200902 16:22:46.961" level="INFO">Typing text '123456' into text field 'password'.</msg>
+<status status="PASS" starttime="20200902 16:22:46.961" endtime="20200902 16:22:47.445"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:22:46.960" endtime="20200902 16:22:47.446"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//button[@type='submit']</arg>
+</arguments>
+<msg timestamp="20200902 16:22:47.449" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20200902 16:22:47.449" endtime="20200902 16:22:47.731"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css=.input-field:nth-child(1) &gt; .red-text</arg>
+<arg>Email field is required</arg>
+</arguments>
+<status status="PASS" starttime="20200902 16:22:47.732" endtime="20200902 16:22:47.865"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200902 16:22:47.869" endtime="20200902 16:22:52.513"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:22:07.984" endtime="20200902 16:22:52.515" critical="yes"></status>
+</test>
+<test id="s1-t6" name="No Password Valid Email">
+<kw name="Initialize Login" library="resource">
+<kw name="Welcome Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200902 16:22:52.524" level="INFO">Opening browser 'chrome' to base url 'https://shrouded-tor-61207.herokuapp.com/'.</msg>
+<status status="PASS" starttime="20200902 16:22:52.523" endtime="20200902 16:23:32.151"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200902 16:23:32.151" endtime="20200902 16:23:34.326"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" starttime="20200902 16:23:34.326" endtime="20200902 16:23:34.327"></status>
+</kw>
+<kw name="Home Page Should Be Open" library="resource">
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css=h3</arg>
+<arg>Company X : an online library platform</arg>
+</arguments>
+<status status="PASS" starttime="20200902 16:23:34.328" endtime="20200902 16:23:34.436"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:23:34.327" endtime="20200902 16:23:34.437"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:22:52.522" endtime="20200902 16:23:34.437"></status>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>css=.col:nth-child(9) &gt; .btn</arg>
+</arguments>
+<msg timestamp="20200902 16:23:34.437" level="INFO">Clicking link 'css=.col:nth-child(9) &gt; .btn'.</msg>
+<status status="PASS" starttime="20200902 16:23:34.437" endtime="20200902 16:23:34.911"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css=h4</arg>
+<arg>Login below</arg>
+</arguments>
+<status status="PASS" starttime="20200902 16:23:34.911" endtime="20200902 16:23:34.954"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:22:52.521" endtime="20200902 16:23:34.954"></status>
+</kw>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>test1@test.test</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>email</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20200902 16:23:34.958" level="INFO">Typing text 'test1@test.test' into text field 'email'.</msg>
+<status status="PASS" starttime="20200902 16:23:34.957" endtime="20200902 16:23:35.804"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:23:34.956" endtime="20200902 16:23:35.805"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//button[@type='submit']</arg>
+</arguments>
+<msg timestamp="20200902 16:23:35.807" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20200902 16:23:35.806" endtime="20200902 16:23:35.989"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css=.input-field:nth-child(2) &gt; .red-text</arg>
+<arg>Password field is required</arg>
+</arguments>
+<status status="PASS" starttime="20200902 16:23:35.990" endtime="20200902 16:23:36.079"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200902 16:23:36.089" endtime="20200902 16:23:39.488"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:22:52.518" endtime="20200902 16:23:39.490" critical="yes"></status>
+</test>
+<test id="s1-t7" name="No Password Unknown Email">
+<kw name="Initialize Login" library="resource">
+<kw name="Welcome Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200902 16:23:39.498" level="INFO">Opening browser 'chrome' to base url 'https://shrouded-tor-61207.herokuapp.com/'.</msg>
+<status status="PASS" starttime="20200902 16:23:39.498" endtime="20200902 16:24:16.306"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200902 16:24:16.307" endtime="20200902 16:24:18.511"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" starttime="20200902 16:24:18.512" endtime="20200902 16:24:18.513"></status>
+</kw>
+<kw name="Home Page Should Be Open" library="resource">
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css=h3</arg>
+<arg>Company X : an online library platform</arg>
+</arguments>
+<status status="PASS" starttime="20200902 16:24:18.515" endtime="20200902 16:24:18.594"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:24:18.513" endtime="20200902 16:24:18.594"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:23:39.497" endtime="20200902 16:24:18.595"></status>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>css=.col:nth-child(9) &gt; .btn</arg>
+</arguments>
+<msg timestamp="20200902 16:24:18.596" level="INFO">Clicking link 'css=.col:nth-child(9) &gt; .btn'.</msg>
+<status status="PASS" starttime="20200902 16:24:18.595" endtime="20200902 16:24:18.861"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css=h4</arg>
+<arg>Login below</arg>
+</arguments>
+<status status="PASS" starttime="20200902 16:24:18.861" endtime="20200902 16:24:18.925"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:23:39.497" endtime="20200902 16:24:18.925"></status>
 </kw>
 <kw name="Input Username" library="resource">
 <arguments>
@@ -239,18 +671,18 @@
 <arg>email</arg>
 <arg>${username}</arg>
 </arguments>
-<msg timestamp="20200829 18:19:22.182" level="INFO">Typing text 'test@test.test' into text field 'email'.</msg>
-<status status="PASS" starttime="20200829 18:19:22.182" endtime="20200829 18:19:22.592"></status>
+<msg timestamp="20200902 16:24:18.927" level="INFO">Typing text 'test@test.test' into text field 'email'.</msg>
+<status status="PASS" starttime="20200902 16:24:18.927" endtime="20200902 16:24:19.261"></status>
 </kw>
-<status status="PASS" starttime="20200829 18:19:22.182" endtime="20200829 18:19:22.592"></status>
+<status status="PASS" starttime="20200902 16:24:18.926" endtime="20200902 16:24:19.262"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks the button identified by ``locator``.</doc>
 <arguments>
 <arg>xpath=//button[@type='submit']</arg>
 </arguments>
-<msg timestamp="20200829 18:19:22.594" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
-<status status="PASS" starttime="20200829 18:19:22.594" endtime="20200829 18:19:22.757"></status>
+<msg timestamp="20200902 16:24:19.264" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20200902 16:24:19.263" endtime="20200902 16:24:19.547"></status>
 </kw>
 <kw name="Get Element Attribute" library="SeleniumLibrary">
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
@@ -258,11 +690,15 @@
 <arg>css=.input-field:nth-child(2) &gt; .red-text</arg>
 <arg>Password field is required</arg>
 </arguments>
-<status status="PASS" starttime="20200829 18:19:22.762" endtime="20200829 18:19:22.817"></status>
+<status status="PASS" starttime="20200902 16:24:19.552" endtime="20200902 16:24:19.640"></status>
 </kw>
-<status status="PASS" starttime="20200829 18:18:24.280" endtime="20200829 18:19:22.822" critical="yes"></status>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200902 16:24:19.642" endtime="20200902 16:24:22.456"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:23:39.494" endtime="20200902 16:24:22.457" critical="yes"></status>
 </test>
-<test id="s1-t4" name="No Password Invalid Email">
+<test id="s1-t8" name="No Password Invalid Email">
 <kw name="Initialize Login" library="resource">
 <kw name="Welcome Page" library="resource">
 <kw name="Open Browser" library="SeleniumLibrary">
@@ -271,19 +707,19 @@
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20200829 18:19:22.832" level="INFO">Opening browser 'chrome' to base url 'https://shrouded-tor-61207.herokuapp.com/'.</msg>
-<status status="PASS" starttime="20200829 18:19:22.822" endtime="20200829 18:20:26.470"></status>
+<msg timestamp="20200902 16:24:22.521" level="INFO">Opening browser 'chrome' to base url 'https://shrouded-tor-61207.herokuapp.com/'.</msg>
+<status status="PASS" starttime="20200902 16:24:22.520" endtime="20200902 16:24:56.763"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200829 18:20:26.470" endtime="20200829 18:20:28.782"></status>
+<status status="PASS" starttime="20200902 16:24:56.763" endtime="20200902 16:24:58.950"></status>
 </kw>
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <doc>Sets the delay that is waited after each Selenium command.</doc>
 <arguments>
 <arg>${DELAY}</arg>
 </arguments>
-<status status="PASS" starttime="20200829 18:20:28.782" endtime="20200829 18:20:28.784"></status>
+<status status="PASS" starttime="20200902 16:24:58.950" endtime="20200902 16:24:58.953"></status>
 </kw>
 <kw name="Home Page Should Be Open" library="resource">
 <kw name="Get Element Attribute" library="SeleniumLibrary">
@@ -292,19 +728,19 @@
 <arg>css=h3</arg>
 <arg>Company X : an online library platform</arg>
 </arguments>
-<status status="PASS" starttime="20200829 18:20:28.785" endtime="20200829 18:20:28.829"></status>
+<status status="PASS" starttime="20200902 16:24:58.959" endtime="20200902 16:24:59.045"></status>
 </kw>
-<status status="PASS" starttime="20200829 18:20:28.784" endtime="20200829 18:20:28.829"></status>
+<status status="PASS" starttime="20200902 16:24:58.955" endtime="20200902 16:24:59.045"></status>
 </kw>
-<status status="PASS" starttime="20200829 18:19:22.822" endtime="20200829 18:20:28.830"></status>
+<status status="PASS" starttime="20200902 16:24:22.519" endtime="20200902 16:24:59.046"></status>
 </kw>
 <kw name="Click Link" library="SeleniumLibrary">
 <doc>Clicks a link identified by ``locator``.</doc>
 <arguments>
 <arg>css=.col:nth-child(9) &gt; .btn</arg>
 </arguments>
-<msg timestamp="20200829 18:20:28.830" level="INFO">Clicking link 'css=.col:nth-child(9) &gt; .btn'.</msg>
-<status status="PASS" starttime="20200829 18:20:28.830" endtime="20200829 18:20:29.040"></status>
+<msg timestamp="20200902 16:24:59.046" level="INFO">Clicking link 'css=.col:nth-child(9) &gt; .btn'.</msg>
+<status status="PASS" starttime="20200902 16:24:59.046" endtime="20200902 16:24:59.276"></status>
 </kw>
 <kw name="Get Element Attribute" library="SeleniumLibrary">
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
@@ -312,9 +748,9 @@
 <arg>css=h4</arg>
 <arg>Login below</arg>
 </arguments>
-<status status="PASS" starttime="20200829 18:20:29.041" endtime="20200829 18:20:29.092"></status>
+<status status="PASS" starttime="20200902 16:24:59.277" endtime="20200902 16:24:59.343"></status>
 </kw>
-<status status="PASS" starttime="20200829 18:19:22.822" endtime="20200829 18:20:29.092"></status>
+<status status="PASS" starttime="20200902 16:24:22.517" endtime="20200902 16:24:59.344"></status>
 </kw>
 <kw name="Input Username" library="resource">
 <arguments>
@@ -326,18 +762,18 @@
 <arg>email</arg>
 <arg>${username}</arg>
 </arguments>
-<msg timestamp="20200829 18:20:29.092" level="INFO">Typing text 'test@test.test' into text field 'email'.</msg>
-<status status="PASS" starttime="20200829 18:20:29.092" endtime="20200829 18:20:29.408"></status>
+<msg timestamp="20200902 16:24:59.347" level="INFO">Typing text 'test@test.test' into text field 'email'.</msg>
+<status status="PASS" starttime="20200902 16:24:59.347" endtime="20200902 16:24:59.775"></status>
 </kw>
-<status status="PASS" starttime="20200829 18:20:29.092" endtime="20200829 18:20:29.410"></status>
+<status status="PASS" starttime="20200902 16:24:59.345" endtime="20200902 16:24:59.775"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks the button identified by ``locator``.</doc>
 <arguments>
 <arg>xpath=//button[@type='submit']</arg>
 </arguments>
-<msg timestamp="20200829 18:20:29.413" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
-<status status="PASS" starttime="20200829 18:20:29.412" endtime="20200829 18:20:29.633"></status>
+<msg timestamp="20200902 16:24:59.777" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20200902 16:24:59.776" endtime="20200902 16:24:59.990"></status>
 </kw>
 <kw name="Get Element Attribute" library="SeleniumLibrary">
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
@@ -345,25 +781,357 @@
 <arg>css=.input-field:nth-child(1) &gt; .red-text</arg>
 <arg>Email is invalid</arg>
 </arguments>
-<status status="PASS" starttime="20200829 18:20:29.634" endtime="20200829 18:20:29.708"></status>
+<status status="PASS" starttime="20200902 16:24:59.991" endtime="20200902 16:25:00.110"></status>
 </kw>
-<status status="PASS" starttime="20200829 18:19:22.822" endtime="20200829 18:20:29.712" critical="yes"></status>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200902 16:25:00.111" endtime="20200902 16:25:02.769"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:24:22.514" endtime="20200902 16:25:02.770" critical="yes"></status>
 </test>
-<doc>A test suite with a test for temporary files to be transferred to another test suite
+<test id="s1-t9" name="No Email and Password">
+<kw name="Initialize Login" library="resource">
+<kw name="Welcome Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200902 16:25:02.781" level="INFO">Opening browser 'chrome' to base url 'https://shrouded-tor-61207.herokuapp.com/'.</msg>
+<status status="PASS" starttime="20200902 16:25:02.779" endtime="20200902 16:25:32.876"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200902 16:25:32.877" endtime="20200902 16:25:35.059"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" starttime="20200902 16:25:35.060" endtime="20200902 16:25:35.061"></status>
+</kw>
+<kw name="Home Page Should Be Open" library="resource">
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css=h3</arg>
+<arg>Company X : an online library platform</arg>
+</arguments>
+<status status="PASS" starttime="20200902 16:25:35.064" endtime="20200902 16:25:35.165"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:25:35.061" endtime="20200902 16:25:35.166"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:25:02.775" endtime="20200902 16:25:35.167"></status>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>css=.col:nth-child(9) &gt; .btn</arg>
+</arguments>
+<msg timestamp="20200902 16:25:35.168" level="INFO">Clicking link 'css=.col:nth-child(9) &gt; .btn'.</msg>
+<status status="PASS" starttime="20200902 16:25:35.167" endtime="20200902 16:25:35.437"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css=h4</arg>
+<arg>Login below</arg>
+</arguments>
+<status status="PASS" starttime="20200902 16:25:35.437" endtime="20200902 16:25:35.526"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:25:02.775" endtime="20200902 16:25:35.528"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//button[@type='submit']</arg>
+</arguments>
+<msg timestamp="20200902 16:25:35.532" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20200902 16:25:35.531" endtime="20200902 16:25:35.838"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css=.input-field:nth-child(1) &gt; .red-text</arg>
+<arg>Email field is required</arg>
+</arguments>
+<status status="PASS" starttime="20200902 16:25:35.919" endtime="20200902 16:25:35.994"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css=.input-field:nth-child(2) &gt; .red-text</arg>
+<arg>Password field is required</arg>
+</arguments>
+<status status="PASS" starttime="20200902 16:25:36.000" endtime="20200902 16:25:36.099"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200902 16:25:36.100" endtime="20200902 16:25:39.049"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:25:02.773" endtime="20200902 16:25:39.050" critical="yes"></status>
+</test>
+<test id="s1-t10" name="Display Profile">
+<kw name="Initialize Login" library="resource">
+<kw name="Welcome Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200902 16:25:39.098" level="INFO">Opening browser 'chrome' to base url 'https://shrouded-tor-61207.herokuapp.com/'.</msg>
+<status status="PASS" starttime="20200902 16:25:39.097" endtime="20200902 16:26:16.427"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200902 16:26:16.428" endtime="20200902 16:26:18.664"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" starttime="20200902 16:26:18.664" endtime="20200902 16:26:18.666"></status>
+</kw>
+<kw name="Home Page Should Be Open" library="resource">
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css=h3</arg>
+<arg>Company X : an online library platform</arg>
+</arguments>
+<status status="PASS" starttime="20200902 16:26:18.669" endtime="20200902 16:26:18.736"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:26:18.667" endtime="20200902 16:26:18.736"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:25:39.096" endtime="20200902 16:26:18.737"></status>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>css=.col:nth-child(9) &gt; .btn</arg>
+</arguments>
+<msg timestamp="20200902 16:26:18.737" level="INFO">Clicking link 'css=.col:nth-child(9) &gt; .btn'.</msg>
+<status status="PASS" starttime="20200902 16:26:18.737" endtime="20200902 16:26:18.992"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css=h4</arg>
+<arg>Login below</arg>
+</arguments>
+<status status="PASS" starttime="20200902 16:26:18.992" endtime="20200902 16:26:19.069"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:25:39.095" endtime="20200902 16:26:19.069"></status>
+</kw>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>studentuser@test.test</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>email</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20200902 16:26:19.071" level="INFO">Typing text 'studentuser@test.test' into text field 'email'.</msg>
+<status status="PASS" starttime="20200902 16:26:19.071" endtime="20200902 16:26:19.507"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:26:19.070" endtime="20200902 16:26:19.507"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>123456</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20200902 16:26:19.511" level="INFO">Typing text '123456' into text field 'password'.</msg>
+<status status="PASS" starttime="20200902 16:26:19.509" endtime="20200902 16:26:19.852"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:26:19.508" endtime="20200902 16:26:19.853"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//button[@type='submit']</arg>
+</arguments>
+<msg timestamp="20200902 16:26:19.855" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20200902 16:26:19.854" endtime="20200902 16:26:20.091"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>xpath=//p</arg>
+<arg>Welcome to your dashboard</arg>
+</arguments>
+<status status="PASS" starttime="20200902 16:26:20.099" endtime="20200902 16:26:20.169"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20200902 16:26:22.194" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20200902 16:26:20.170" endtime="20200902 16:26:22.194"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="root"]//div//div[2]//div//div//button[1]</arg>
+</arguments>
+<msg timestamp="20200902 16:26:22.195" level="INFO">Clicking button 'xpath=//*[@id="root"]//div//div[2]//div//div//button[1]'.</msg>
+<status status="PASS" starttime="20200902 16:26:22.194" endtime="20200902 16:26:22.480"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200902 16:26:22.481" endtime="20200902 16:26:25.139"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:25:39.092" endtime="20200902 16:26:25.141" critical="yes"></status>
+</test>
+<test id="s1-t11" name="Browse Books">
+<kw name="Initialize Login" library="resource">
+<kw name="Welcome Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200902 16:26:25.147" level="INFO">Opening browser 'chrome' to base url 'https://shrouded-tor-61207.herokuapp.com/'.</msg>
+<status status="PASS" starttime="20200902 16:26:25.147" endtime="20200902 16:27:02.061"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200902 16:27:02.061" endtime="20200902 16:27:04.223"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" starttime="20200902 16:27:04.223" endtime="20200902 16:27:04.224"></status>
+</kw>
+<kw name="Home Page Should Be Open" library="resource">
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css=h3</arg>
+<arg>Company X : an online library platform</arg>
+</arguments>
+<status status="PASS" starttime="20200902 16:27:04.226" endtime="20200902 16:27:04.351"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:27:04.224" endtime="20200902 16:27:04.352"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:26:25.146" endtime="20200902 16:27:04.352"></status>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>css=.col:nth-child(9) &gt; .btn</arg>
+</arguments>
+<msg timestamp="20200902 16:27:04.353" level="INFO">Clicking link 'css=.col:nth-child(9) &gt; .btn'.</msg>
+<status status="PASS" starttime="20200902 16:27:04.352" endtime="20200902 16:27:04.565"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css=h4</arg>
+<arg>Login below</arg>
+</arguments>
+<status status="PASS" starttime="20200902 16:27:04.566" endtime="20200902 16:27:04.634"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:26:25.146" endtime="20200902 16:27:04.635"></status>
+</kw>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>studentuser@test.test</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>email</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20200902 16:27:04.637" level="INFO">Typing text 'studentuser@test.test' into text field 'email'.</msg>
+<status status="PASS" starttime="20200902 16:27:04.637" endtime="20200902 16:27:05.048"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:27:04.636" endtime="20200902 16:27:05.049"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>123456</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20200902 16:27:05.052" level="INFO">Typing text '123456' into text field 'password'.</msg>
+<status status="PASS" starttime="20200902 16:27:05.051" endtime="20200902 16:27:05.326"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:27:05.050" endtime="20200902 16:27:05.328"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//button[@type='submit']</arg>
+</arguments>
+<msg timestamp="20200902 16:27:05.330" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20200902 16:27:05.329" endtime="20200902 16:27:05.517"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>xpath=//p</arg>
+<arg>Welcome to your dashboard</arg>
+</arguments>
+<status status="PASS" starttime="20200902 16:27:05.518" endtime="20200902 16:27:05.591"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20200902 16:27:07.597" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20200902 16:27:05.595" endtime="20200902 16:27:07.597"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="root"]//div//div[2]//div//div//button[2]</arg>
+</arguments>
+<msg timestamp="20200902 16:27:07.599" level="INFO">Clicking button 'xpath=//*[@id="root"]//div//div[2]//div//div//button[2]'.</msg>
+<status status="PASS" starttime="20200902 16:27:07.598" endtime="20200902 16:27:07.886"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200902 16:27:07.886" endtime="20200902 16:27:10.598"></status>
+</kw>
+<status status="PASS" starttime="20200902 16:26:25.144" endtime="20200902 16:27:10.600" critical="yes"></status>
+</test>
+<doc>A test suite with a test for Login.
 
 This test has a workflow that is created using keywords in
 the imported resource file.</doc>
-<status status="PASS" starttime="20200829 18:16:45.700" endtime="20200829 18:20:29.724"></status>
+<status status="PASS" starttime="20200902 16:18:17.818" endtime="20200902 16:27:10.716"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="0">Critical Tests</stat>
-<stat pass="4" fail="0">All Tests</stat>
+<stat pass="11" fail="0">Critical Tests</stat>
+<stat pass="11" fail="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="4" fail="0" id="s1" name="Temp">Temp</stat>
+<stat pass="11" fail="0" id="s1" name="Login">Login</stat>
 </suite>
 </statistics>
 <errors>
