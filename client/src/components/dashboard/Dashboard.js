@@ -169,7 +169,7 @@ class Dashboard extends Component {
                   marginTop: "1rem"
                 }}
                 onClick={this.onLogoutClick}
-                className="btn btn-large waves-effect waves-light hoverable blue accent-3">
+                className="btn btn-large waves-effect waves-light hoverable red accent-3">
                 Logout
               </button>
               <h4><b>Book/s Currently Borrowed</b></h4>
@@ -239,7 +239,7 @@ class Dashboard extends Component {
                   marginTop: "1rem"
                 }}
                 onClick={this.onLogoutClick}
-                className="btn btn-large waves-effect waves-light hoverable darkgreen accent-3">
+                className="btn btn-large waves-effect waves-light hoverable red accent-3">
                 Logout
               </button>
             </div>
@@ -301,7 +301,7 @@ class Dashboard extends Component {
                   marginTop: "1rem"
                 }}
                 onClick={this.onLogoutClick}
-                className="btn btn-large waves-effect waves-light hoverable darkgreen accent-3">
+                className="btn btn-large waves-effect waves-light hoverable red accent-3">
                 Logout
               </button>
             </div>
