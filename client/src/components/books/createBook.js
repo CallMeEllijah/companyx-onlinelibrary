@@ -50,8 +50,7 @@ class createBook extends Component {
             this.setState({
                 errors: err.response.data
             });
-        }
-        );
+        });
 
     var d = new Date();
 
