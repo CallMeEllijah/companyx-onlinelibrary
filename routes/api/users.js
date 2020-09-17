@@ -9,6 +9,7 @@ const passport = require("passport");
 const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
 const validateChangePassInput = require("../../validation/changepass");
+const validateForgotChangePassInput = require("../../validation/forgotpassword");
 
 // Load User model
 const User = require("../../models/User");
@@ -109,8 +110,14 @@ router.post("/changePassword", (req, res) => {
     });
   }).catch(err => {return res.status(400).json(err)});
 });
-//changePassword
+//changePassword forgot password
 router.post("/changeForgotPassword", (req, res) => {
+  const { errors, isValid } = validateForgotChangePassInput(req.body);
+
+  // Check validation
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
 
   User.findOne({ email: req.body.email }).then(user => {
     if(req.body.secA == user.secA){
