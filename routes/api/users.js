@@ -12,6 +12,7 @@ const validateChangePassInput = require("../../validation/changepass");
 
 // Load User model
 const User = require("../../models/User");
+const e = require("express");
 
 // @route POST api/users/register
 // @desc Register user
@@ -108,6 +109,28 @@ router.post("/changePassword", (req, res) => {
     });
   }).catch(err => {return res.status(400).json(err)});
 });
+//changePassword
+router.post("/changeForgotPassword", (req, res) => {
+
+  User.findOne({ email: req.body.email }).then(user => {
+    if(req.body.secA == user.secA){
+        bcrypt.genSalt(10, (err, salt) => {
+          bcrypt.hash(req.body.password, salt, (err, hash) => {
+            if (err) throw err;
+              req.body.password = hash;
+              user
+                .updateOne({"password":req.body.password}, {upsert : true})
+                .then(user => res.json(user))
+                .catch(err => console.log(err));
+          });
+        });
+  } else {
+    return res
+          .status(400)
+          .json({ secA: "Security Answer incorrect" });
+  }
+  }).catch(err => {return res.status(400).json(err)});
+});
 
 // @route POST api/users/login
 // @desc Login user and return JWT token
@@ -121,7 +144,6 @@ router.post("/login", (req, res) => {
   if (!isValid) {
     return res.status(400).json(errors);
   }
-    console.log(req.body)
   const email = req.body.email;
   const password = req.body.password;
 
@@ -168,6 +190,13 @@ router.post("/login", (req, res) => {
       }
     });
   });
+});
+
+router.post("/findUser", (req, res) => {
+  User.findOne({ email: req.body.email })
+    .then(user => {
+      return res.status(200).json({question: user.secQ})})
+    .catch(err => {return res.status(400).json({error: err})});
 });
 
 router.post("/deleteUser", (req, res) => {
