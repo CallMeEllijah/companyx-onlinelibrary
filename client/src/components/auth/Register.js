@@ -233,9 +233,9 @@ class Register extends Component {
                       error={errors.secQ}
                       id="secQ">
                     <option value="" disabled selected>Choose your option</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
+                    <option value="1">What is the name of your first pet?</option>
+                    <option value="2">What is the Brand of your first car?</option>
+                    <option value="3">What is the name of your favorite teacher?</option>
                   </select>
                   <span className="red-text">{errors.secQ}</span>
                 </div>
