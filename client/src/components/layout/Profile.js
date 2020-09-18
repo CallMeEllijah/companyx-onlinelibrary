@@ -93,7 +93,7 @@ class Profile extends Component {
             }
           ],
           rows: [{
-            Status: "no reviews available as of " + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+            Status: "no reviews made as of " + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
           }]
         }
       });
@@ -265,7 +265,7 @@ class Profile extends Component {
                     paging={false}
                     searching={false}
                     style={{width: "600px"}}/>
-              <h3><b>Past Book/s Borrowed</b></h3>
+              <h3><b>Past Book  s Borrowed</b></h3>
                   <MDBDataTableV5
                     hover
                     info={false}

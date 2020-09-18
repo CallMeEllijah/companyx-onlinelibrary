@@ -212,7 +212,7 @@ class instanceDetails extends Component {
                                 marginTop: "1rem"
                             }} 
                             type="submit" 
-                            className="btn btn-medium waves-effect waves-light hoverable blue accent-3">
+                            className="btn btn-medium waves-effect waves-light hoverable red accent-2">
                             Delete Instance
                         </button>
                       </div>
