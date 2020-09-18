@@ -157,7 +157,7 @@ class Dashboard extends Component {
                   marginTop: "1rem"
                 }}
                 onClick={this.onBookListClick}
-                className="btn btn-large waves-effect waves-light hoverable blue accent-3">
+                className="btn btn-large waves-effect waves-light hoverable teal accent-4">
                 Existing Books
               </button>
               <br></br>
@@ -169,10 +169,10 @@ class Dashboard extends Component {
                   marginTop: "1rem"
                 }}
                 onClick={this.onLogoutClick}
-                className="btn btn-large waves-effect waves-light hoverable red accent-3">
+                className="btn btn-large waves-effect waves-light hoverable red accent-2">
                 Logout
               </button>
-              <h4><b>Book/s Currently Borrowed</b></h4>
+              <h4><b>Books Currently Borrowed</b></h4>
                   <MDBDataTableV5
                     hover
                     info={false}
@@ -215,7 +215,7 @@ class Dashboard extends Component {
                   marginTop: "1rem"
                 }}
                 onClick={this.onBookListClick}
-                className="btn btn-large waves-effect waves-light hoverable blue accent-3">
+                className="btn btn-large waves-effect waves-light hoverable teal accent-4">
                 Existing Books
               </button>
               <br></br>
@@ -239,7 +239,7 @@ class Dashboard extends Component {
                   marginTop: "1rem"
                 }}
                 onClick={this.onLogoutClick}
-                className="btn btn-large waves-effect waves-light hoverable red accent-3">
+                className="btn btn-large waves-effect waves-light hoverable red accent-2">
                 Logout
               </button>
             </div>
@@ -277,7 +277,7 @@ class Dashboard extends Component {
                   marginTop: "1rem"
                 }}
                 onClick={this.onRegisterClick}
-                className="btn btn-large waves-effect waves-light hoverable blue accent-3">
+                className="btn btn-large waves-effect waves-light hoverable teal accent-4">
                 Register Manager
               </button>
               <br></br>
@@ -301,7 +301,7 @@ class Dashboard extends Component {
                   marginTop: "1rem"
                 }}
                 onClick={this.onLogoutClick}
-                className="btn btn-large waves-effect waves-light hoverable red accent-3">
+                className="btn btn-large waves-effect waves-light hoverable red accent-2">
                 Logout
               </button>
             </div>

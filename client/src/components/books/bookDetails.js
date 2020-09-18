@@ -533,7 +533,7 @@ class bookDetails extends Component {
                                 marginTop: "1rem"
                             }} 
                             type="submit" 
-                            className="btn btn-medium waves-effect waves-light hoverable darkgreen accent-3">
+                            className="btn btn-medium waves-effect waves-light hoverable red accent-2">
                             Delete Book
                         </button>
                       </div>
