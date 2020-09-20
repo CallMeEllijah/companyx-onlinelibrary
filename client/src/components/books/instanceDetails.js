@@ -41,7 +41,7 @@ class instanceDetails extends Component {
                 if(res.data.dateA === ""){
                     var d = new Date();
                     this.setState({
-                        dateA: d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+                        dateA: (d.getMonth() + 1)+ "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
                     });
                 }
                 if(res.data.instance === "0"){
@@ -85,7 +85,7 @@ class instanceDetails extends Component {
     var d = new Date();
 
     const newLog = {
-      log: this.state._id + " instance has been edited " + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+      log: this.state._id + " instance has been edited " + (d.getMonth() + 1)+ "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
     };
 
     Axios.post("/api/logs/createLog", newLog);
@@ -110,7 +110,7 @@ class instanceDetails extends Component {
         var d = new Date();
 
         const newLog = {
-          log: this.state._id + " instance has been deleted " + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+          log: this.state._id + " instance has been deleted " + (d.getMonth() + 1)+ "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
         };
     
         Axios.post("/api/logs/createLog", newLog);
@@ -142,7 +142,7 @@ class instanceDetails extends Component {
       var d = new Date();
 
       const newLog = {
-        log: this.state._id + " has been borrowed by " + this.props.auth.user.username + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+        log: this.state._id + " has been borrowed by " + this.props.auth.user.username + (d.getMonth() + 1)+ "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
       };
   
       Axios.post("/api/logs/createLog", newLog);

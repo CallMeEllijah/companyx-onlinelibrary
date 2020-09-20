@@ -60,13 +60,13 @@ class Register extends Component {
     
     //edit the log to only run when they receive a success from register user
 
-    //var d = new Date();
+    var d = new Date();
 
-    //const newLog = {
-    //  log: this.state.IDno + " has made a library account. at "  + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
-    //};
+    const newLog = {
+      log: this.state.IDno + " has made a library account. at "  + (d.getMonth() + 1)+ "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+    };
 
-    //Axios.post("/api/logs/createLog", newLog);
+    Axios.post("/api/logs/createLog", newLog);
 
   };
 
@@ -91,7 +91,7 @@ class Register extends Component {
     var d = new Date();
 
     const newLog = {
-      log: "admin made " + this.state.IDno + " a manager account. at "  + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+      log: "admin made " + this.state.IDno + " a manager account. at "  + (d.getMonth() + 1)+ "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
     };
 
     Axios.post("/api/logs/createLog", newLog);
@@ -226,13 +226,13 @@ class Register extends Component {
                   <span className="red-text">{errors.password2}</span>
                 </div>
                 <div >
-                <label>Browser Select</label>
+                <label>Security Question</label>
                   <select className="browser-default"
                       onChange={this.onChange}
                       value={this.state.secQ}
                       error={errors.secQ}
                       id="secQ">
-                    <option value="" disabled selected>Choose your option</option>
+                    <option value="" disabled selected>Choose your Security Question</option>
                     <option value="1">What is the name of your first pet?</option>
                     <option value="2">What is the Brand of your first car?</option>
                     <option value="3">What is the name of your favorite teacher?</option>
@@ -398,16 +398,16 @@ class Register extends Component {
                   <span className="red-text">{errors.password2}</span>
                 </div>
                 <div >
-                  <label>Browser Select</label>
+                  <label>Security Question</label>
                   <select className="browser-default"
                       onChange={this.onChange}
                       value={this.state.secQ}
                       error={errors.secQ}
                       id="secQ">
-                    <option value="" disabled selected>Choose your option</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
+                    <option value="" disabled selected>Choose your Security Question</option>
+                    <option value="1">What is the name of your first pet?</option>
+                    <option value="2">What is the Brand of your first car?</option>
+                    <option value="3">What is the name of your favorite teacher?</option>
                   </select>
                   <span className="red-text">{errors.secQ}</span>
                 </div>

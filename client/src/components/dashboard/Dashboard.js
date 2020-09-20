@@ -87,7 +87,7 @@ class Dashboard extends Component {
           }
         ],
         rows: [{
-          Status: "no currently borrowed books as of " + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+          Status: "no currently borrowed books as of " + (d.getMonth() + 1)+ "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
         }]
       }
     });

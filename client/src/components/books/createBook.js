@@ -55,7 +55,7 @@ class createBook extends Component {
     var d = new Date();
 
     const newLog = {
-      log: this.state.title + " book has been added to the library by" + this.props.auth.user.username + " at " + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+      log: this.state.title + " book has been added to the library by" + this.props.auth.user.username + " at " + (d.getMonth() + 1)+ "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
     };
 
     axios.post("/api/logs/createLog", newLog);

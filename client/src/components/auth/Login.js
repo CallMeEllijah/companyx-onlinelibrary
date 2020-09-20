@@ -59,7 +59,7 @@ class Login extends Component {
     var d = new Date();
 
     const newLog = {
-      log: this.state.email + " logged in. at " + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+      log: this.state.email + " logged in. at " + (d.getMonth() + 1)+ "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
     };
 
     Axios.post("/api/logs/createLog", newLog);

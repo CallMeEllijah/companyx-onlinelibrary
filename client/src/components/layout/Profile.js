@@ -93,7 +93,7 @@ class Profile extends Component {
             }
           ],
           rows: [{
-            Status: "no reviews made as of " + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+            Status: "no reviews made as of " + (d.getMonth() + 1)+ "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
           }]
         }
       });
@@ -151,7 +151,7 @@ class Profile extends Component {
           }
         ],
         rows: [{
-          Status: "no history available as of " + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+          Status: "no history available as of " + (d.getMonth() + 1)+ "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
         }]
       }
     });

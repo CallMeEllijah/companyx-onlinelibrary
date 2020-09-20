@@ -205,7 +205,7 @@ class bookDetails extends Component {
                 }
               ],
               rows: [{
-                Status: "no books available as of " + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+                Status: "no books available as of " + (d.getMonth() + 1)+ "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
               }]
             }
           });
@@ -265,7 +265,7 @@ class bookDetails extends Component {
                 }
               ],
               rows: [{
-                review: "no reviews available as of " + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+                review: "no reviews available as of " + (d.getMonth() + 1)+ "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
               }]
             }
           });
@@ -312,7 +312,7 @@ class bookDetails extends Component {
     var d = new Date();
 
     const newLog = {
-      log: this.state.oldTitle + " book has been edited by "  +  this.props.auth.user.username + " at " + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+      log: this.state.oldTitle + " book has been edited by "  +  this.props.auth.user.username + " at " + (d.getMonth() + 1)+ "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
     };
 
     Axios.post("/api/logs/createLog", newLog);
@@ -345,7 +345,7 @@ class bookDetails extends Component {
       var d = new Date();
 
       const newLog = {
-        log: this.state._id + " has been borrowed by " + this.props.auth.user.username + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+        log: this.state._id + " has been borrowed by " + this.props.auth.user.username + (d.getMonth() + 1)+ "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
       };
   
       Axios.post("/api/logs/createLog", newLog);
@@ -369,7 +369,7 @@ class bookDetails extends Component {
     var d = new Date();
 
     const newLog = {
-      log: this.state.oldTitle + " instance has been added to the library by "  +  this.props.auth.user.username + " at " + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+      log: this.state.oldTitle + " instance has been added to the library by "  +  this.props.auth.user.username + " at " + (d.getMonth() + 1)+ "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
     };
 
     Axios.post("/api/logs/createLog", newLog);
@@ -391,7 +391,7 @@ class bookDetails extends Component {
       var d = new Date();
 
       const newLog = {
-        log: this.state.oldTitle + " book has been deleted by " +  this.props.auth.user.username + " at " + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+        log: this.state.oldTitle + " book has been deleted by " +  this.props.auth.user.username + " at " + (d.getMonth() + 1)+ "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
       };
   
       Axios.post("/api/logs/createLog", newLog);
@@ -423,7 +423,7 @@ class bookDetails extends Component {
     var d = new Date();
 
     const newLog = {
-      log: this.state.oldTitle + " has received a review from " + this.props.auth.user.username + " " + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
+      log: this.state.oldTitle + " has received a review from " + this.props.auth.user.username + " " + (d.getMonth() + 1)+ "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes()
     };
 
     Axios.post("/api/logs/createLog", newLog);
