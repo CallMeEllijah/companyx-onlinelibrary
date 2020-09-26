@@ -40,10 +40,15 @@ Input Username
 Input Password
     [Arguments]    ${password}
     Input Text    password    ${password}
-
+    
 Initialize Login
     Welcome Page
     click Link  css=.col:nth-child(9) > .btn
     Get Element Attribute  css=h4    Login below
+
+Initialize Register
+    Welcome Page
+    click Link  css=.col:nth-child(7) > .btn
+    Get Element Attribute  css=h4    Register below
 
 

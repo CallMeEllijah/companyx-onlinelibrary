@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation     A test suite with a test for Login.
+Documentation     A test suite with tests for valid and invalid Login.
 ...
 ...               This test has a workflow that is created using keywords in
 ...               the imported resource file.
@@ -49,7 +49,7 @@ Valid Login Admin Display Profile
     click Button    xpath=//*[@id="root"]//div//div[2]//div//div//button[2]
     Get Element Attribute  xpath=//h4  Register below
     Close Browser
-    
+
 Invalid Email1
     Initialize Login
     Input Username  test
