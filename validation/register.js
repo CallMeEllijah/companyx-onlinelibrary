@@ -70,7 +70,7 @@ module.exports = function validateRegisterInput(data) {
     errors.secQ = "Security Question field is required";
   }
   if (Validator.isEmpty(data.secA)) {
-    errors.secA = "Secirtoy Answer field is required";
+    errors.secA = "Security Answer field is required";
   }
 
   return {
