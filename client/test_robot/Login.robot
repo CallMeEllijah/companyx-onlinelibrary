@@ -6,14 +6,50 @@ Documentation     A test suite with a test for Login.
 Resource          resource.robot
 
 *** Test Cases ***
-Valid Login
+Valid Login Student Display Profile
     Initialize Login
     Input Username    studentuser@test.test
     Input Password    123456
     click Button    xpath=//button[@type='submit']
     Get Element Attribute  xpath=//p      Welcome to your dashboard
+    Sleep    2
+    click Button    xpath=//*[@id="root"]//div//div[2]//div//div//button[1]
+    Close Browser
+    
+Vlid Login Student Browse Books
+    Initialize Login
+    Input Username    studentuser@test.test
+    Input Password    123456
+    click Button    xpath=//button[@type='submit']
+    Get Element Attribute  xpath=//p      Welcome to your dashboard
+    Sleep    2
+    click Button    xpath=//*[@id="root"]//div//div[2]//div//div//button[2]
     Close Browser
 
+Valid Login Manager Display Profile
+    Initialize Login
+    Input Username    manageruser@test.test
+    Input Password    123456
+    click Button    xpath=//button[@type='submit']
+    Get Element Attribute  xpath=//p      Welcome to your dashboard
+    Get Element Attribute  xpath=//p    Manager
+    Sleep    2
+    click Button    xpath=//*[@id="root"]//div//div[2]//div//div//button[3]
+    Get Element Attribute  xpath=//b   Create Book
+    Close Browser
+
+Valid Login Admin Display Profile
+    Initialize Login
+    Input Username    adminuser@test.test
+    Input Password    123456
+    click Button    xpath=//button[@type='submit']
+    Get Element Attribute  xpath=//p      Welcome to your dashboard
+    Get Element Attribute  xpath=//p    Admin
+    Sleep    2
+    click Button    xpath=//*[@id="root"]//div//div[2]//div//div//button[2]
+    Get Element Attribute  xpath=//h4  Register below
+    Close Browser
+    
 Invalid Email1
     Initialize Login
     Input Username  test
@@ -75,22 +111,3 @@ No Email and Password
     Get Element Attribute  css=.input-field:nth-child(2) > .red-text      Password field is required
     Close Browser
     
-Display Profile
-    Initialize Login
-    Input Username    studentuser@test.test
-    Input Password    123456
-    click Button    xpath=//button[@type='submit']
-    Get Element Attribute  xpath=//p      Welcome to your dashboard
-    Sleep    2
-    click Button    xpath=//*[@id="root"]//div//div[2]//div//div//button[1]
-    Close Browser
-    
-Browse Books
-    Initialize Login
-    Input Username    studentuser@test.test
-    Input Password    123456
-    click Button    xpath=//button[@type='submit']
-    Get Element Attribute  xpath=//p      Welcome to your dashboard
-    Sleep    2
-    click Button    xpath=//*[@id="root"]//div//div[2]//div//div//button[2]
-    Close Browser
